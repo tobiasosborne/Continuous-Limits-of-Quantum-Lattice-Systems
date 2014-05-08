@@ -331,6 +331,30 @@ Because $V$ is assumed finite dimensional this process terminates and we obtain
 %	\omega(A) = \langle\Omega|\pi_\omega(A)|\Omega\rangle.
 %\end{equation} 
 
+\section{Fermions}
+In this appendix we generalise the continuum limit construction to the fermionic case. Our setting is again that of a regular lattice $a\mathbb{Z}^D$ embedded in $\mathbb{R}^D$, where $a>0$ is the lattice spacing. However, we now assume that, instead of a distinguishable quantum spin being attached to each site, we have a family of fermions hopping on the lattice. We describe this with a collection of operators $a_{j,\sigma}$ and $a^{\dag}_{j,\sigma}$, where $j\in a\mathbb{Z}$ and $\sigma \in \{1,2, \ldots, s\}$ labels some internal degrees of freedom, obeying the canonical anticommutation relations
+\begin{equation}
+	\{a_{j,\sigma}, a^{\dag}_{j,\sigma'}\} = \delta_{j,k}\delta_{\sigma\sigma'}.
+\end{equation}
+
+\subsection{The classical continuum limit}
+We again start in one spatial dimension and employ the following natural generalisation of our classical smeared field operators for the fermionic setting
+\begin{equation}
+	\phi^{(a)}(f) \equiv a\sum_{j\in\mathbb{Z}} \sum_{\alpha=0}^{2^s-1} [f]_\alpha(aj) \lambda_j^\alpha,
+\end{equation}
+where now $f$ is a function from $a\mathbb{Z}$ to bounded operators on the space of fermions of $s$ species at a single site, i.e., $\lambda^{\alpha}_j$ runs over all the polynomials of $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$ in normal order. E.g., in the case where $s=0$,
+\begin{equation}
+	\lambda^0_j = \mathbb{I}_j, \quad \lambda^{1}_j = a_j, \quad \lambda^{2}_j = a_j^\dag, \quad\text{and}\quad \lambda^{3}_j = a_j^\dag a_j.
+\end{equation}
+
+Now it is easy to see that our classical smeared field observables become $\mathbb{Z}/2\mathbb{Z}$ graded, according to whether they contain an even (respectively, odd) number of fermion operators. In the case of two odd smeared classical field operators we find that their commutator \emph{does not vanish} in the limit $a\rightarrow 0$. Instead, their \emph{anticommutator} vanishes according to
+\begin{equation}
+	\lim_{a\rightarrow}\|\{\phi^{(a)}(f), \phi^{(a)}(g)\}\| = 0,
+\end{equation}
+i.e., they form a representation of the \emph{Grassmann numbers}.
+
+
+
 \section{Strict causality for the quantum continuum limit}
 In this appendix we argue that the dynamics of the quantum continuum limit obey strict causality. In order to discuss causality we first need to show how dynamics can be integrated into the continuum limit picture. The natural setting here is then that of a quantum lattice system in $D$ dimensions with hamiltonian 
 \begin{equation}
