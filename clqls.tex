@@ -346,8 +346,9 @@ where now $f$ is a function from $a\mathbb{Z}$ to bounded operators on the space
 \begin{equation}
 	\lambda^0_j = \mathbb{I}_j, \quad \lambda^{1}_j = a_j, \quad \lambda^{2}_j = a_j^\dag, \quad\text{and}\quad \lambda^{3}_j = a_j^\dag a_j.
 \end{equation}
+The fermion algebra is $\mathbb{Z}/2\mathbb{Z}$ graded according to whether there are an even (respectively, odd) product of fermion operators.
 
-Now it is easy to see that our classical smeared field observables become $\mathbb{Z}/2\mathbb{Z}$ graded, according to whether they contain an even (respectively, odd) number of fermion operators. In the case of two odd smeared classical field operators we find that their commutator \emph{does not vanish} in the limit $a\rightarrow 0$. Instead, their \emph{anticommutator} vanishes according to
+Now it is easy to see that our classical smeared field observables also become $\mathbb{Z}/2\mathbb{Z}$ graded, according to whether they contain an even (respectively, odd) number of fermion operators. In the case of two odd smeared classical field operators we find that their commutator \emph{does not vanish} in the limit $a\rightarrow 0$. Instead, their \emph{anticommutator} vanishes according to
 \begin{equation}
 	\lim_{a\rightarrow 0}\|\{\phi^{(a)}(f), \phi^{(a)}(g)\}\| = 0,
 \end{equation}
@@ -357,11 +358,22 @@ i.e., they become \emph{Grassmann number valued}. We define the classical limit 
 \end{equation}
 as $f$ runs over all rapidly decaying functions.
 
-The fermionic field fluctuation operators are given, as per the bosonic case, by
+\subsection{The quantum continuum limit}
+The fermionic quantum continuous limit as derived analogously to the bosonic case: here the fermionic field fluctuation operators are by
 \begin{equation}
 	\widetilde{\phi}^{(a)}(f) \equiv Z_f(a)\left( a\sum_{\alpha=0}^{d^2-1}\sum_{j\in \mathbb{Z}} [f]_\alpha(aj) \lambda^\alpha_j - \langle\phi(f)\rangle\mathbb{I}\right).
 \end{equation}
-In contrast to the bosonic case we obtain a graded antisymmetric form for the anticommutator.
+In contrast to the bosonic case, as we'll see, we obtain a \emph{graded} antisymmetric form for the anticommutator. 
+
+Suppose that $Z_f(a)Z_g(a) = 1/a$ and that $f$ and $g$ are both \emph{odd} fermionic lattice operators. We now show that $\{\widehat{\phi}(f), \widehat{\phi}(g)\} \propto \mathbb{I}$. The proof of this closely follows the bosonic case.  Consider
+\begin{equation}
+		\{\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)\} = a^2Z_f(a)Z_g(a)\sum_{j\in\mathbb{Z}} \sum_{\alpha,\beta,\gamma=0}^{2^s-1} [f]_\alpha(aj)[g]_\beta(aj) \tr(\lambda^{\gamma}_j\{\lambda_j^\alpha, \lambda_j^\beta\})  \lambda^\gamma_j.
+\end{equation} 
+this expression may be rewritten as a local fluctuation operator:
+\begin{equation}
+	\{\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)\} = \Theta(f,g)\mathbb{I} + 
+\end{equation}
+
 
 \section{Strict causality for the quantum continuum limit}
 In this appendix we argue that the dynamics of the quantum continuum limit obey strict causality. In order to discuss causality we first need to show how dynamics can be integrated into the continuum limit picture. The natural setting here is then that of a quantum lattice system in $D$ dimensions with hamiltonian 
