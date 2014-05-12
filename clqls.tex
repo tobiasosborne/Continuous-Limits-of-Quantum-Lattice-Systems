@@ -332,9 +332,9 @@ Because $V$ is assumed finite dimensional this process terminates and we obtain
 %\end{equation} 
 
 \section{Fermions}
-In this appendix we generalise the continuum limit construction to the fermionic case. Our setting is again that of a regular lattice $a\mathbb{Z}^D$ embedded in $\mathbb{R}^D$, where $a>0$ is the lattice spacing. However, we now assume that, instead of a distinguishable quantum spin being attached to each site, we have a family of fermions hopping on the lattice. We describe this with a collection of operators $a_{j,\sigma}$ and $a^{\dag}_{j,\sigma}$, where $j\in a\mathbb{Z}$ and $\sigma \in \{1,2, \ldots, s\}$ labels some internal degrees of freedom, obeying the canonical anticommutation relations
+In this appendix we generalise the continuum limit construction to the fermionic case. Our setting is again that of a regular lattice $a\mathbb{Z}^D$ embedded in $\mathbb{R}^D$, where $a>0$ is the lattice spacing. However, we now assume that, instead of a distinguishable quantum spin being attached to each site, we have a family of fermions hopping on the lattice. We describe this with a collection of operators $a_{j,\sigma}$ and $a^{\dag}_{j,\sigma}$, where $j\in a\mathbb{Z}^D$ and $\sigma \in \{1,2, \ldots, s\}$ labels some internal degrees of freedom, obeying the canonical anticommutation relations
 \begin{equation}
-	\{a_{j,\sigma}, a^{\dag}_{j,\sigma'}\} = \delta_{j,k}\delta_{\sigma\sigma'}.
+	\{a_{j,\sigma}, a^{\dag}_{k,\tau}\} = \delta_{j,k}\delta_{\sigma\tau}.
 \end{equation}
 
 \subsection{The classical continuum limit}
@@ -342,9 +342,9 @@ We again start in one spatial dimension and employ the following natural general
 \begin{equation}
 	\phi^{(a)}(f) \equiv a\sum_{j\in\mathbb{Z}} \sum_{\alpha=0}^{2^s-1} [f]_\alpha(aj) \lambda_j^\alpha,
 \end{equation}
-where now $f$ is a function from $a\mathbb{Z}$ to bounded operators on the space of fermions of $s$ species at a single site, i.e., $\lambda^{\alpha}_j$ runs over all the polynomials of $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$ in normal order. E.g., in the case where $s=0$,
+where now $f$ is a function from $a\mathbb{Z}$ to bounded operators on the space of fermions of $s$ species at a single site, i.e., $\lambda^{\alpha}_j$ runs over all suitably normalised polynomials of $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$ in normal order. E.g., in the case where $s=0$,
 \begin{equation}
-	\lambda^0_j = \mathbb{I}_j, \quad \lambda^{1}_j = a_j, \quad \lambda^{2}_j = a_j^\dag, \quad\text{and}\quad \lambda^{3}_j = a_j^\dag a_j.
+	\lambda^0_j = \frac{1}{\sqrt{2}}\mathbb{I}_j, \quad \lambda^{1}_j = a_j, \quad \lambda^{2}_j = a_j^\dag, \quad\text{and}\quad \lambda^{3}_j = \frac{1}{\sqrt{2}}(a_j^\dag a_j - a_j a_j^\dag).
 \end{equation}
 The fermion algebra is $\mathbb{Z}/2\mathbb{Z}$ graded according to whether there are an even (respectively, odd) product of fermion operators.
 
@@ -356,10 +356,12 @@ i.e., they become \emph{Grassmann number valued}. We define the classical limit 
 \begin{equation}
 	\left\langle\prod_{l=1}^m\phi(f_l)\right\rangle \equiv \lim_{a\rightarrow 0} \tr\left(\rho_a \prod_{l=1}^m\phi^{(a)}(f_l)\right),
 \end{equation}
-as $f$ runs over all rapidly decaying functions.
+as $f$ runs over all rapidly decaying functions. Notice that, in contrast to the bosoninc case, the order of the products of the argument does, in general, matter in this expression. 
+
+The functional $\langle \cdot \rangle$ is a positive linear functional on the algebra of all rapidly decaying grassmann number valued functions from $\mathbb{R}$ to $\mathcal{G}_n$.
 
 \subsection{The quantum continuum limit}
-The fermionic quantum continuous limit as derived analogously to the bosonic case: here the fermionic field fluctuation operators are by
+The fermionic quantum continuous limit is derived analogously to the bosonic case: here the fermionic field fluctuation operators are by
 \begin{equation}
 	\widetilde{\phi}^{(a)}(f) \equiv Z_f(a)\left( a\sum_{\alpha=0}^{d^2-1}\sum_{j\in \mathbb{Z}} [f]_\alpha(aj) \lambda^\alpha_j - \langle\phi(f)\rangle\mathbb{I}\right).
 \end{equation}
@@ -2006,5 +2008,22 @@ We can use this observation to write the theta matrix as
 	\Theta^{jk} = \tr(\rho [\mu^j, \mu^k]).
 \end{equation}
 
+\section{Grassmann numbers}
+Grassmann numbers are built using an $n$-dimensional complex vector space: consider a basis
+\begin{equation}
+	\theta_a, \quad 1, \ldots, n
+\end{equation}
+of $\mathbb{C}^n$. An example would be simply the column vectors with a $1$ in the $j$th place. At the moment all we know is how to add or subtract these elements, i.e., there is no \emph{product} operation defined on the vector space. We supply a product by defining
+\begin{equation}
+	\theta_a^2 = 0, \quad \forall a
+\end{equation}
+and
+\begin{equation}
+	\theta_a\theta_b + \theta_b \theta_a = 0,
+\end{equation}
+an extend it by linearity to an arbitrary element of $\mathbb{C}^2$. No other product relations are imposed. Thus $\theta_a\theta_b$ is not an element of $\mathbb{C}^n$ and the collection of such products provide an additional $n(n-1)/2$  linearly independent elements. Indeed, it is possible to find $2^n$ linearly independent elements in total generated by the above relations. The set of all such elements are called the \emph{Grassmann numbers} $\mathcal{G}_n$. An arbitrary element of $\mathcal{G}_n$ may be written as 
+\begin{equation}
+	f = \alpha + \sum_{p=1}^n\sum_{1 \le j_1 < j_2 < \cdots < j_p \le n}\alpha_{j_1j_2\cdots j_p} \theta_{j_1}\theta_{j_2}\cdots \theta_{j_p}.
+\end{equation} 
 
 \end{document}
