@@ -356,9 +356,19 @@ i.e., they become \emph{Grassmann number valued}. We define the classical limit 
 \begin{equation}
 	\left\langle\prod_{l=1}^m\phi(f_l)\right\rangle \equiv \lim_{a\rightarrow 0} \tr\left(\rho_a \prod_{l=1}^m\phi^{(a)}(f_l)\right),
 \end{equation}
-as $f$ runs over all rapidly decaying functions. Notice that, in contrast to the bosoninc case, the order of the products of the argument does, in general, matter in this expression. 
+as $f$ runs over all rapidly decaying functions. Notice that, in contrast to the bosonic case, the order of the products of the argument does, in general, matter in this expression. However, because physical states any microscopic theory must obey superselection rules, i.e., they are linear functions vanishing on odd operators, the expectation values of odd operators vanish and hence the order with respect to even operators is irrelevant.
 
 The functional $\langle \cdot \rangle$ is a positive linear functional on the algebra of all rapidly decaying grassmann number valued functions from $\mathbb{R}$ to $\mathcal{G}_n$.
+
+Let's study a simple example. We consider two species of fermion, spin up $a_{j,\uparrow}$ and spin down $a_{j,\downarrow}$ hopping on an infinite chain. Our reference state is given by the ground state $|\Omega\rangle$ of the simple model 
+\begin{equation}
+	H = \sum_{j\in\mathbb{Z}} a_{j,\uparrow}^\dag a_{j,\uparrow} - a_{j,\downarrow}^\dag a_{j,\downarrow}.
+\end{equation}
+This state is simply the half-filled state where there is a spin-down particle at each site:
+\begin{equation}
+	|\Omega\rangle \equiv \prod_{j\in\mathbb{Z}} a_{j,\downarrow}^\dag|\text{vac}\rangle,
+\end{equation}
+where $|\text{vac}\rangle$ is the empty vacuum state. The configuration space is $16$ dimensional and the local observable algebra has dimension $256$ and is build from the four odd operators $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$, $\sigma = \uparrow, \downarrow$, and quadratic, cubic, and quartic combinations thereof.  The expectation value of the four odd field operators built from $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$, $\sigma = \uparrow, \downarrow$ vanish, and hence also when they appear in any product. We are left with two field operators, the identity operator and the magnetisation operator.
 
 \subsection{The quantum continuum limit}
 The fermionic quantum continuous limit is derived analogously to the bosonic case: here the fermionic field fluctuation operators are by
