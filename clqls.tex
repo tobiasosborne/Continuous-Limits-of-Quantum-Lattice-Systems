@@ -360,7 +360,7 @@ as $f$ runs over all rapidly decaying functions. Notice that, in contrast to the
 
 The functional $\langle \cdot \rangle$ is a positive linear functional on the algebra of all rapidly decaying grassmann number valued functions from $\mathbb{R}$ to $\mathcal{G}_n$.
 
-Let's study a simple example. We consider two species of fermion, spin up $a_{j,\uparrow}$ and spin down $a_{j,\downarrow}$ hopping on an infinite chain. Our reference state is given by the ground state $|\Omega\rangle$ of the simple model 
+Let's study a simple example. We consider two species of fermion, spin up $a_{j,\uparrow}$ and spin down $a_{j,\downarrow}$, hopping on an infinite chain. Our reference state is given by the ground state $|\Omega\rangle$ of the simple model 
 \begin{equation}
 	H = \sum_{j\in\mathbb{Z}} a_{j,\uparrow}^\dag a_{j,\uparrow} - a_{j,\downarrow}^\dag a_{j,\downarrow}.
 \end{equation}
@@ -368,7 +368,10 @@ This state is simply the half-filled state where there is a spin-down particle a
 \begin{equation}
 	|\Omega\rangle \equiv \prod_{j\in\mathbb{Z}} a_{j,\downarrow}^\dag|\text{vac}\rangle,
 \end{equation}
-where $|\text{vac}\rangle$ is the empty vacuum state. The configuration space is $16$ dimensional and the local observable algebra has dimension $256$ and is build from the four odd operators $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$, $\sigma = \uparrow, \downarrow$, and quadratic, cubic, and quartic combinations thereof.  The expectation value of the four odd field operators built from $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$, $\sigma = \uparrow, \downarrow$ vanish, and hence also when they appear in any product. We are left with two field operators, the identity operator and the magnetisation operator.
+where $|\text{vac}\rangle$ is the empty vacuum state. The configuration space is $16$ dimensional and the local observable algebra has dimension $256$ and is built from the four odd operators $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$, $\sigma = \uparrow, \downarrow$, and quadratic, cubic, and quartic combinations thereof.  The expectation value of the four odd field operators built from $a_{j,\sigma}$ and $a_{j,\sigma}^\dag$, $\sigma = \uparrow, \downarrow$ vanish, and hence also when they appear in any product. We are left with two nonzero classical field operators, the identity operator and the magnetisation field
+\begin{equation}
+	\phi(x) \equiv -1.
+\end{equation}
 
 \subsection{The quantum continuum limit}
 The fermionic quantum continuous limit is derived analogously to the bosonic case: here the fermionic field fluctuation operators are by
@@ -377,14 +380,33 @@ The fermionic quantum continuous limit is derived analogously to the bosonic cas
 \end{equation}
 In contrast to the bosonic case, as we'll see, we obtain a \emph{graded} antisymmetric form for the anticommutator. 
 
-Suppose that $Z_f(a)Z_g(a) = 1/a$ and that $f$ and $g$ are both \emph{odd} fermionic lattice operators. We now show that $\{\widehat{\phi}(f), \widehat{\phi}(g)\} \propto \mathbb{I}$. The proof of this closely follows the bosonic case.  Consider
+Suppose that $Z_f(a)Z_g(a) = 1/a$ and that $f$ and $g$ are both \emph{odd} fermionic lattice operators. We now show that $\{\widehat{\phi}(f), \widehat{\phi}(g)\} \propto \mathbb{I}$. The proof of this closely follows the bosonic case.  Consider first
 \begin{equation}
-		\{\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)\} = a^2Z_f(a)Z_g(a)\sum_{j\in\mathbb{Z}} \sum_{\alpha,\beta,\gamma=0}^{2^s-1} [f]_\alpha(aj)[g]_\beta(aj) \tr(\lambda^{\gamma}_j\{\lambda_j^\alpha, \lambda_j^\beta\})  \lambda^\gamma_j.
+			\{\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)\} = a^2Z_f(a)Z_g(a)\sum_{j\in\mathbb{Z}} \sum_{\alpha,\beta,\gamma=0}^{2^s-1} [f]_\alpha(aj)[g]_\beta(aj) \tr(\lambda^{\gamma}_j\{\lambda_j^\alpha, \lambda_j^\beta\})  \lambda^\gamma_j. \\
 \end{equation} 
-this expression may be rewritten as a local fluctuation operator:
+we first rewrite this expression as 
 \begin{equation}
-	\{\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)\} = \Theta(f,g)\mathbb{I} + 
+	\begin{split}
+		\{\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)\} &= \langle\phi(f\star g)\rangle\mathbb{I} + a\sum_{j\in\mathbb{Z}} \sum_{\alpha,\beta,\gamma=0}^{2^s-1} [f]_\alpha(aj)[g]_\beta(aj) \tr(\lambda^{\gamma}_j\{\lambda_j^\alpha, \lambda_j^\beta\})  \lambda^\gamma_j - \langle \phi(f\star g)\rangle\mathbb{I}, \\
+		&= \langle\phi(f\star g)\rangle\mathbb{I} + Z^{-1}_{f\star g}(a)\widetilde{\phi}^{(a)}(f\star g),
+	\end{split}
 \end{equation}
+where we've introduced the \emph{star product}: let $v$ and $w$ be two vectors in $\mathbb{C}^{2^s}$ and define the vector $v\star w$ via
+\begin{equation}
+	[v\star w]_\alpha \equiv \sum_{\beta,\gamma = 0}^{2^s-1}\tr(\lambda^{\alpha}\{\lambda^\beta, \lambda^\gamma\})[v]_\beta[w]_\gamma.
+\end{equation}
+The star product is extended pointwise to functions via
+\begin{equation}
+	(f\star g)(x) \equiv f(x)\star g(x).
+\end{equation}
+Thus, as long as $\lim_{a\rightarrow 0} Z^{-1}_{f\star g}(a) = 0$, we can replace, in the limit $a\rightarrow 0$, the anticommutator of $\widetilde{\phi}^{(a)}(f)$ and $\widetilde{\phi}^{(a)}(g)$ with a multiple of the identity inside any expectation value. Hence we deduce the anticommutation relations for the odd quantum field fluctuation  operators
+\begin{equation}
+	\{\widehat{\phi}(f), \widehat{\phi}(g)\} = \langle\phi(f\star g)\rangle\mathbb{I}.
+\end{equation}
+
+
+
+
 
 
 \section{Strict causality for the quantum continuum limit}
