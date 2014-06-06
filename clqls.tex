@@ -405,8 +405,42 @@ Thus, as long as $\lim_{a\rightarrow 0} Z^{-1}_{f\star g}(a) = 0$, we can replac
 \end{equation}
 
 
+\section{String operators}
+In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
+
+So far our discussion has focussed on the observable algebra given by the quasi-local algebra $\mathcal{A}(\mathbb{Z}^D)$. This is generically the most appropriate collection of observables for a local quantum system: suppose that $|\Omega\rangle$ is the ground state of some local quantum system and let $A$ be some \emph{extensive} string-like observable, i.e., $A = \bigotimes_{j} a_j$, $a_j\in \mathcal{A}$. Then we generically expect $A|\Omega\rangle$ to lie in another hilbert space. Ordinarily, on energy grounds, we are free to ignore the hilbert space built from $A|\Omega\rangle$ as irrelevant to low-energy physics. However, there are situations where we must include this hilbert space in the discussion of low-energy large-scale physics, namely, when the system is at a symmetry breaking transition. 
+
+A complete mathematical treatment of this problem would bring us to the discussion of superselection sectors. We'll evade this somewhat by specialising to (a) one spatial dimension; and (b) the case of systems invariant under local symmetry actions. Let's begin with a fairly general class of examples. Suppose $|\Omega_a\rangle$, $a>0$, is a sequence of states of a one-dimensional chain of qudits of dimension $d$. We further assume that this sequence of states admits a local action of a symmetry group $G$. What this means is that $G$ acts on $|\Omega_a\rangle$ via the representation
+\begin{equation}
+	\pi(g) \equiv \bigotimes_{j\in\mathbb{Z}} U_g,
+\end{equation}
+where $U_g$ is a unitary representation of $G$ on $\mathbb{C}^d$. Using $\pi(g)$ we can build a sequence of convex sets $\mathcal{C}_a$ of states by simply taking the convex hull of all the states $\pi(g)|\Omega_a\rangle$. What we have in mind throughout this discussion is that there is some sequence of hamiltonians $H_a$ for which the $|\Omega_a\rangle$ are the corresponding ground states and that $[H_a, \pi(g)] = 0$, $g\in G$. We want to specifically deemphasise the role $H_a$ here as the key point is that the continuum limit construction is agnostic concerning the source of the sequence $|\Omega_a\rangle$. 
+
+We can capture this situation operationally by requiring that all valid observables commute with $\pi(G)$, i.e., we restrict our allowed observables from the quasi-local algebra $\mathcal{A}(\mathbb{Z})$ to the subalgebra 
+\begin{equation}
+	\mathcal{O}(\mathbb{Z}) \equiv \{A\in \mathcal{A}(\mathbb{Z})\,|\, [\pi(g),A] = 0, g \in G\}.
+\end{equation}
+
+When $|\Omega_a\rangle$ is \emph{invariant} under the action of $G$ the convex set $\mathcal{C}_a$ consists of only the state $|\Omega_a\rangle$. If, however, the states $|\Omega_a\rangle$ are not invariant we say the symmetry is \emph{broken} and the set $\mathcal{C}_a$ becomes nontrivial. 
+
+We can still use $\mathcal{O}(\mathbb{Z})$ to build a continuum limit however there are new riches awaiting us here: by throwing out some observables we allow for the possibility of \emph{nonlocal} transformations of the sequence $|\Omega_a\rangle$ which are only locally different as determined by observables in $\mathcal{O}(\mathbb{Z})$: consider the string-like operators
+\begin{equation}
+	S_j(g) \equiv \bigotimes_{k\le j} U_g.
+\end{equation}
+Even though $S_j(g)$ acts extensively, i.e., it is \emph{not} an element of $\mathcal{A}(\mathbb{Z})$ as it acts, for all practical purposes, as a \emph{local} operator. This is because 
+\begin{equation}
+	[O, S_j(g)] = 0,
+\end{equation}
+for all $O\in \mathcal{O}(\mathbb{Z})$ with $\supp(O) \cap \{j\} = \emptyset$.
+Given this observation it is plausible to demand that the continuum limit of $S_j(g)$ \emph{whatever that might be}, should at least correspond to the action of something field-like. 
+
+Notice that there is now separation between two notions which were previously implicitly identified: on one hand we have the \emph{observables} we are allowed to use to distinguish states in the continuous limit and on the other we have the set of \emph{transformations} we are allowed to apply. So far we have left the second set essentially implicit, however, we are now forced to spell out the separation more carefully. In doing so we will discover that when we restrict our observables it is natural to \emph{add} in new transformations. Remarkably these new transformations admit a \emph{fermionic}, or even {anyonic} explanation.
 
 
+
+
+\section{Systems with edges}
+In this appendix we discuss the continuum limit of systems with edges. This setting is particularly pertinent to the discussion of impurity physics and the Kondo effect as well as the discussion of edge physics. 
 
 
 \section{Strict causality for the quantum continuum limit}
