@@ -405,11 +405,42 @@ Thus, as long as $\lim_{a\rightarrow 0} Z^{-1}_{f\star g}(a) = 0$, we can replac
 \end{equation}
 
 \subsection{The tight-binding model}
-The simplest nontrivial of local fermion models is the spin-less tight binding model in one dimension
+The simplest nontrivial of local fermion models is the spinless tight binding model in one dimension
 \begin{equation}
 	H = \sum_{j\in \mathbb{Z}} a_{j+1}^\dag a_j + \text{h.c.}
 \end{equation}
-The ground state of this model is a fermi sea and the low-energy large-scale physics is understood to be described by the massless Dirac field, a fact we'll establish here. 
+The ground state of this model is a fermi sea and the low-energy large-scale physics is understood to be described by the massless Dirac field, a fact we'll establish here. We explicitly obtain the ground state by first making a canonical rotation to fourier variables
+\begin{equation}
+	\begin{split}
+		\widehat{a}(k) &\equiv \sum_{j\in\mathbb{Z}} e^{2\pi i jk} a_j, \quad \text{and} \\
+		\widehat{a}^\dag(k) &\equiv \sum_{j\in\mathbb{Z}} e^{-2\pi i jk} a_j^\dag,
+	\end{split}
+\end{equation}
+which obey the canonical anticommutation relations
+\begin{equation}
+	\{\widehat{a}(k), \widehat{a}^\dag(k')\} = \sum_{j\in\mathbb{Z}} e^{2\pi i j(k-k')}\mathbb{I} = \delta(k-k')\mathbb{I}.
+\end{equation}
+Inverting this relationship we find 
+\begin{equation}
+	a_j = \int_{-\frac12}^{\frac12} dk\, e^{-2\pi jk} \widehat{a}(k).
+\end{equation}
+In terms of the fourier variables the hamiltonian is diagonal:
+\begin{equation}
+	\begin{split}
+		H &= \sum_{j\in \mathbb{Z}} a_{j+1}^\dag a_j + \text{h.c.} \\
+		&= \sum_{j\in \mathbb{Z}}\int_{-\frac12}^\frac12 \int_{-\frac12}^\frac12 dkdk'\, e^{2\pi i (j+1)k- 2\pi i j k'} \widehat{a}^\dag(k) \widehat{a}(k') + \text{h.c.} \\ 
+		&= \int_{-\frac12}^\frac12 \int_{-\frac12}^\frac12 dkdk'\, \delta(k-k') e^{2\pi i} \widehat{a}^\dag(k) \widehat{a}(k') + \text{h.c.} \\ 
+		&= 2\int_{-\frac12}^\frac12 dk\, \cos(2\pi k) \widehat{a}^\dag(k) \widehat{a}(k).
+	\end{split}
+\end{equation}
+The ground state $|\Omega\rangle$ is then determined by the condition that 
+\begin{equation}
+\langle \Omega|\widehat{a}^\dag(k) \widehat{a}(k)|\Omega\rangle = \begin{cases}
+	1, &\quad k \not\in (-\frac14, \frac14), \\
+	0, &\quad k \in (-\frac14, \frac14).
+\end{cases}
+\end{equation}
+This is a one-dimensional fermi sea.
 
 
 \section{String operators}
