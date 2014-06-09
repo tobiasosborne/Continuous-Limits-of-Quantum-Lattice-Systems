@@ -422,7 +422,7 @@ which obey the canonical anticommutation relations
 \end{equation}
 Inverting this relationship we find 
 \begin{equation}
-	a_j = \int_{-\frac12}^{\frac12} dk\, e^{-2\pi jk} \widehat{a}(k).
+	a_j = \int_{-\frac12}^{\frac12} dk\, e^{-2\pi ijk} \widehat{a}(k).
 \end{equation}
 In terms of the fourier variables the hamiltonian is diagonal:
 \begin{equation}
@@ -440,7 +440,38 @@ The ground state $|\Omega\rangle$ is then determined by the condition that
 	0, &\quad k \in (-\frac14, \frac14).
 \end{cases}
 \end{equation}
-This is a one-dimensional fermi sea.
+This is a one-dimensional fermi sea. We take for our reference sequence of states $|\Omega_a\rangle$, $a\ge 0$, the constant ground state $|\Omega\rangle$ of the tight-binding model.
+
+We first build the classical continuum limit: using the basis 
+\begin{equation}
+	\lambda^0_j = \frac{1}{\sqrt{2}}\mathbb{I}_j, \quad \lambda^{1}_j = a_j, \quad \lambda^{2}_j = a_j^\dag, \quad\text{and}\quad \lambda^{3}_j = \frac{1}{\sqrt{2}}(a_j^\dag a_j - a_j a_j^\dag),
+\end{equation}
+we see that 
+\begin{equation}
+	\langle \lambda_j^0\rangle = \frac{1}{\sqrt2},
+\end{equation}
+\begin{equation}
+	\langle \lambda_j^1\rangle = \langle \lambda_j^2\rangle = 0,
+\end{equation}
+and
+\begin{equation}
+	\begin{split}
+		\langle \lambda_j^3\rangle &= \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi ij (k-k')} \langle \widehat{a}^\dag(k)\widehat{a}(k')\rangle - \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi ij (k'-k)} \langle \widehat{a}(k)\widehat{a}^\dag(k')\rangle \\
+		&= \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\,  \langle \widehat{a}^\dag(k)\widehat{a}(k)\rangle - \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\, \langle \widehat{a}(k)\widehat{a}^\dag(k)\rangle = 0.
+	\end{split}
+\end{equation}
+The remaining expectation values follow a similar pattern; consider the classical two-point function
+\begin{equation}
+	\begin{split}
+		\langle a_0^\dag a_l\rangle &= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{-2\pi ilk'} \langle \widehat{a}^\dag(k)\widehat{a}(k')\rangle \\
+		&= \int_{-\frac12}^{\frac12} dk\, e^{-2\pi ilk} \langle \widehat{a}^\dag(k)\widehat{a}(k)\rangle \\
+		&= \frac{e^{-2\pi ilk}}{-2\pi i l}\bigg|_{k=-\frac12}^{k=\frac12} - \int_{-\frac14}^{\frac14} dk\, e^{-2\pi ilk}\\ 
+		&= -\frac{\cos(\pi i l)}{\pi i l} - \frac{e^{-2\pi ilk}}{-2\pi i l}\bigg|_{k=-\frac14}^{k=\frac14} \\
+		&= \frac{\cos(\frac{\pi i}{2}l)-\cos(\pi il)}{\pi i l} = \frac{\cos(\frac{\pi i}{2}l)-(-1)^l}{\pi i l}.
+	\end{split}
+\end{equation}
+That is, the classical correlation function is \emph{nontrivial} according to
+
 
 
 \section{String operators}
