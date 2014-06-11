@@ -405,37 +405,37 @@ Thus, as long as $\lim_{a\rightarrow 0} Z^{-1}_{f\star g}(a) = 0$, we can replac
 \end{equation}
 
 \subsection{The tight-binding model}
-The simplest nontrivial of local fermion models is the spinless tight binding model in one dimension
+The simplest nontrivial model of local fermion models is the spinless tight-binding model in one dimension:
 \begin{equation}
-	H = \sum_{j\in \mathbb{Z}} a_{j+1}^\dag a_j + \text{h.c.}
+	H = \sum_{j\in \mathbb{Z}} c_{j+1}^\dag c_j + \text{h.c.}
 \end{equation}
 The ground state of this model is a fermi sea and the low-energy large-scale physics is understood to be described by the massless Dirac field, a fact we'll establish here. We explicitly obtain the ground state by first making a canonical rotation to fourier variables
 \begin{equation}
 	\begin{split}
-		\widehat{a}(k) &\equiv \sum_{j\in\mathbb{Z}} e^{2\pi i jk} a_j, \quad \text{and} \\
-		\widehat{a}^\dag(k) &\equiv \sum_{j\in\mathbb{Z}} e^{-2\pi i jk} a_j^\dag,
+		\widehat{c}(k) &\equiv \sum_{j\in\mathbb{Z}} e^{2\pi i jk} c_j, \quad \text{and} \\
+		\widehat{c}^\dag(k) &\equiv \sum_{j\in\mathbb{Z}} e^{-2\pi i jk} c_j^\dag,
 	\end{split}
 \end{equation}
 which obey the canonical anticommutation relations
 \begin{equation}
-	\{\widehat{a}(k), \widehat{a}^\dag(k')\} = \sum_{j\in\mathbb{Z}} e^{2\pi i j(k-k')}\mathbb{I} = \delta(k-k')\mathbb{I}.
+	\{\widehat{c}(k), \widehat{c}^\dag(k')\} = \sum_{j\in\mathbb{Z}} e^{2\pi i j(k-k')}\mathbb{I} = \delta(k-k')\mathbb{I}.
 \end{equation}
 Inverting this relationship we find 
 \begin{equation}
-	a_j = \int_{-\frac12}^{\frac12} dk\, e^{-2\pi ijk} \widehat{a}(k).
+	c_j = \int_{-\frac12}^{\frac12} dk\, e^{-2\pi ijk} \widehat{c}(k).
 \end{equation}
 In terms of the fourier variables the hamiltonian is diagonal:
 \begin{equation}
 	\begin{split}
-		H &= \sum_{j\in \mathbb{Z}} a_{j+1}^\dag a_j + \text{h.c.} \\
-		&= \sum_{j\in \mathbb{Z}}\int_{-\frac12}^\frac12 \int_{-\frac12}^\frac12 dkdk'\, e^{2\pi i (j+1)k- 2\pi i j k'} \widehat{a}^\dag(k) \widehat{a}(k') + \text{h.c.} \\ 
-		&= \int_{-\frac12}^\frac12 \int_{-\frac12}^\frac12 dkdk'\, \delta(k-k') e^{2\pi i} \widehat{a}^\dag(k) \widehat{a}(k') + \text{h.c.} \\ 
-		&= 2\int_{-\frac12}^\frac12 dk\, \cos(2\pi k) \widehat{a}^\dag(k) \widehat{a}(k).
+		H &= \sum_{j\in \mathbb{Z}} c_{j+1}^\dag c_j + \text{h.c.} \\
+		&= \sum_{j\in \mathbb{Z}}\int_{-\frac12}^\frac12 \int_{-\frac12}^\frac12 dkdk'\, e^{2\pi i (j+1)k- 2\pi i j k'} \widehat{c}^\dag(k) \widehat{c}(k') + \text{h.c.} \\ 
+		&= \int_{-\frac12}^\frac12 \int_{-\frac12}^\frac12 dkdk'\, \delta(k-k') e^{2\pi i k} \widehat{c}^\dag(k) \widehat{c}(k') + \text{h.c.} \\ 
+		&= 2\int_{-\frac12}^\frac12 dk\, \cos(2\pi k) \widehat{c}^\dag(k) \widehat{c}(k).
 	\end{split}
 \end{equation}
 The ground state $|\Omega\rangle$ is then determined by the condition that 
 \begin{equation}
-\langle \Omega|\widehat{a}^\dag(k) \widehat{a}(k)|\Omega\rangle = \begin{cases}
+\langle \Omega|\widehat{c}^\dag(k) \widehat{c}(k)|\Omega\rangle = \begin{cases}
 	1, &\quad k \not\in (-\frac14, \frac14), \\
 	0, &\quad k \in (-\frac14, \frac14).
 \end{cases}
@@ -444,7 +444,7 @@ This is a one-dimensional fermi sea. We take for our reference sequence of state
 
 We first build the classical continuum limit: using the basis 
 \begin{equation}
-	\lambda^0_j = \frac{1}{\sqrt{2}}\mathbb{I}_j, \quad \lambda^{1}_j = a_j, \quad \lambda^{2}_j = a_j^\dag, \quad\text{and}\quad \lambda^{3}_j = \frac{1}{\sqrt{2}}(a_j^\dag a_j - a_j a_j^\dag),
+	\lambda^0_j = \frac{1}{\sqrt{2}}\mathbb{I}_j, \quad \lambda^{1}_j = c_j, \quad \lambda^{2}_j = c_j^\dag, \quad\text{and}\quad \lambda^{3}_j = \frac{1}{\sqrt{2}}(c_j^\dag c_j - c_j c_j^\dag),
 \end{equation}
 we see that 
 \begin{equation}
@@ -456,27 +456,42 @@ we see that
 and
 \begin{equation}
 	\begin{split}
-		\langle \lambda_j^3\rangle &= \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi ij (k-k')} \langle \widehat{a}^\dag(k)\widehat{a}(k')\rangle - \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi ij (k'-k)} \langle \widehat{a}(k)\widehat{a}^\dag(k')\rangle \\
-		&= \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\,  \langle \widehat{a}^\dag(k)\widehat{a}(k)\rangle - \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\, \langle \widehat{a}(k)\widehat{a}^\dag(k)\rangle = 0.
+		\langle \lambda_j^3\rangle &= \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi ij (k-k')} \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle - \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi ij (k'-k)} \langle \widehat{c}(k)\widehat{c}^\dag(k')\rangle \\
+		&= \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\,  \langle \widehat{c}^\dag(k)\widehat{c}(k)\rangle - \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\, \langle \widehat{c}(k)\widehat{c}^\dag(k)\rangle = 0.
 	\end{split}
 \end{equation}
 The remaining expectation values follow a similar pattern; consider the classical two-point function
 \begin{equation}
 	\begin{split}
-		\langle a_0^\dag a_l\rangle &= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{-2\pi ilk'} \langle \widehat{a}^\dag(k)\widehat{a}(k')\rangle \\
-		&= \int_{-\frac12}^{\frac12} dk\, e^{-2\pi ilk} \langle \widehat{a}^\dag(k)\widehat{a}(k)\rangle \\
+		\langle c_0^\dag c_l\rangle &= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{-2\pi ilk'} \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle \\
+		&= \int_{-\frac12}^{\frac12} dk\, e^{-2\pi ilk} \langle \widehat{c}^\dag(k)\widehat{c}(k)\rangle \\
 		&= \frac{e^{-2\pi ilk}}{-2\pi i l}\bigg|_{k=-\frac12}^{k=\frac12} - \int_{-\frac14}^{\frac14} dk\, e^{-2\pi ilk}\\ 
 		&= -\frac{\cos(\pi i l)}{\pi i l} - \frac{e^{-2\pi ilk}}{-2\pi i l}\bigg|_{k=-\frac14}^{k=\frac14} \\
 		&= \frac{\cos(\frac{\pi i}{2}l)-\cos(\pi il)}{\pi i l} = \frac{\cos(\frac{\pi i}{2}l)-(-1)^l}{\pi i l}.
 	\end{split}
 \end{equation}
-That is, the classical correlation function is \emph{nontrivial}. 
-
-The tight-binding model exposes a feature that we have hitherto neglected, namely, that we can build different \emph{inequivalent} continuum limits around \emph{different} lattice momenta. What this means in the present context is as follows. Write
+The correlation function averages to zero according to the standard continuum limit built around lattice momentum $k=0$. However, the classical correlation function will be \emph{nontrivial} for a continuum limit built around lattice momenta $k=\frac14$. Thus the tight-binding model exposes a feature that we have hitherto neglected, namely, that we can build different \emph{inequivalent} continuum limits around \emph{different} lattice momenta. This becomes a necessity when the low-energy physics is determined by a minimum in the dispersion relation occurring at nonzero lattice momenta --- a generic situation for fermion models. What this means in the present context is as follows. Write
 \begin{equation}
 	\phi^{(a)}_k(f) \equiv a\sum_{j\in\mathbb{Z}} \sum_{\alpha=0}^{2^s-1} e^{2\pi i jk}[f]_\alpha(aj) \lambda_j^\alpha,
 \end{equation}
-where $k \in [-\frac12, \frac12)$. This is intended to be a classical observable based around lattice momentum $k$: this is engineered via the addition of the fourier-like phase factor. Correspondingly, we also the introduce the quantum fluctuation operator around lattice momentum $k$:
+where $k \in [-\frac12, \frac12)$. This is intended to be a classical observable based around lattice momentum $k$: this is engineered via the addition of the fourier-like phase factor. 
+
+When we choose $k = \frac14$ we see that the classical fields 
+\begin{equation}
+	\psi^{(a)}_{\frac{1}{4}}(f) \equiv a\sum_{j\in\mathbb{Z}} e^{\frac{\pi}{2} i j}f(aj) c_j, \quad \text{and} \quad {\psi^\dag}^{(a)}_{-\frac{1}{4}}(f) \equiv a\sum_{j\in\mathbb{Z}} e^{\frac{\pi}{2} i j}f(aj) c_j^\dag
+\end{equation}
+exhibit nontrivial correlations in the classical limit:
+\begin{equation}
+	\begin{split}
+		\langle {\psi^\dag}^{(a)}_{-\frac{1}{4}}(f)\psi^{(a)}_{\frac{1}{4}}(g) \rangle &= a^2\sum_{j,j'}f(aj)g(aj')\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi i (jk-j'k')}e^{\frac{\pi}{2} i (j+j')} \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle \\
+		&= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, \widehat{f}(\widetilde{k})\widehat{g}(\widetilde{k}') \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle,\\
+		&= \int_{-\frac12}^{\frac12} dk\, \widehat{f}(\widetilde{k})\widehat{g}(\widetilde{k}) - \int_{-\frac14}^{\frac14} dk\, \widehat{f}(\widetilde{k})\widehat{g}(\widetilde{k}).
+	\end{split}
+\end{equation}
+where $\widetilde{k} \equiv \frac{1}{a}(k+\frac14)$.
+
+
+We also the introduce the quantum fluctuation operator around lattice momentum $k$:
 \begin{equation}
 	\widetilde{\phi}^{(a)}_k(f) \equiv Z_f(a)\left( a\sum_{\alpha=0}^{d^2-1}\sum_{j\in \mathbb{Z}} e^{2\pi i jk}[f]_\alpha(aj) \lambda^\alpha_j - \langle\phi_k(f)\rangle\mathbb{I}\right).
 \end{equation}
