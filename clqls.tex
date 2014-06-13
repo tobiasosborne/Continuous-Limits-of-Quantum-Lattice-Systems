@@ -608,10 +608,10 @@ We can bound this quantity according to
 \begin{equation}
 	\begin{split}
 	\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} &\le a^{2D} Z_f(a)Z_g(a) \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   |f_\alpha(as, aj)||g_\beta(at,ak)| \|[e^{-i(s-t)H_a}\lambda^\alpha_je^{i(s-t)H_a}, \lambda^\beta_k]\|_{\infty} \,dsdt \\
-	&\le C_0 a^{2D} Z_f(a)Z_g(a)  \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   |f_\alpha(as, aj)||g_\beta(at,ak)| e^{-{\tau} d(j,k) + \ell |s-t|}\,dsdt
+	&\le C_0 a^{2D} Z_f(a)Z_g(a)  \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   |f_\alpha(as, aj)||g_\beta(at,ak)| e^{-{\tau} d(j,k) + \ell |s-t|}\,dsdt,
 	\end{split}
 \end{equation}
-(Where we've absorbed the constant $\max_{\alpha}\|\lambda^\alpha\|_\infty$ into $C_0$.
+where we've absorbed the constant $\max_{\alpha}\|\lambda^\alpha\|_\infty$ into $C_0$.
 Changing variables we find
 \begin{equation}
 	\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} \le C_0 d^4a^{2D} Z_f(a)Z_g(a)  \sum_{x_j,y_k\in a\mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   f^\star(s', x_j)g^\star(t',y_k) e^{\frac{-{\tau} d(x_j,y_k) +\ell |s'-t'|}{a}}\,dsdt,
