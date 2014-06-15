@@ -492,7 +492,7 @@ To study the quantum fluctuations around the $k=\pm \frac14$ limits. To this end
 \end{equation}
 The functions $f$ appearing in the field observables range, as before, over schwartz functions.
 
-exhibit nontrivial correlations in the classical limit:
+The fluctuation operators exhibit nontrivial correlations in the continuum limit:
 \begin{equation}
 	\begin{split}
 		\langle {\widetilde{\psi}^\dag}{}^{(a)}_{-\frac{1}{4}}(f)\widetilde{\psi}^{(a)}_{\frac{1}{4}}(g) \rangle &= a\sum_{j,j'}f(aj)g(aj')\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi i (jk-j'k')}e^{\frac{\pi}{2} i (j+j')} \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle \\
@@ -512,18 +512,13 @@ $\widetilde{k} \equiv \frac{1}{a}(k+\frac14)$. Thus the correlation function is 
 where $\omega(k) = k+\frac14$, $\Lambda = 1/a$.
 
 
- 
-
-One sees that, apart from special cases, the fluctuation operators for different values of $k$ will generically (anti)commute with each other, i.e., the fluctuations decouple. (This is a straightforward application of the Riemann-Lebesgue lemma.) 
-
-In the case of the tight-binding model we encounter nontrivial features due to the fermi surface at $k = \pm \frac14$.
 
 \section{String operators}
 In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
 
-So far our discussion has focussed on the observable algebra given by the quasi-local algebra $\mathcal{A}(\mathbb{Z}^D)$. This is generically the most appropriate collection of observables for a local quantum system: suppose that $|\Omega\rangle$ is the ground state of some local quantum system and let $A$ be some \emph{extensive} string-like observable, i.e., $A = \bigotimes_{j} a_j$, $a_j\in \mathcal{A}$. Then we generically expect $A|\Omega\rangle$ to lie in another hilbert space. Ordinarily, on energy grounds, we are free to ignore the hilbert space built from $A|\Omega\rangle$ as irrelevant to low-energy physics. However, there are situations where we must include this hilbert space in the discussion of low-energy large-scale physics, namely, when the system is at a symmetry breaking transition. 
+So far our discussion has focussed on the observable algebra given by the quasi-local algebra $\mathcal{A}(\mathbb{Z}^D)$. This is generically the most appropriate collection of observables for a local quantum system: suppose that $|\Omega\rangle$ is the ground state of some local quantum system and let $A$ be some \emph{extensive} string-like observable, i.e., $M = \bigotimes_{j} A_j$, $A_j\in \mathcal{A}$. Then we generically expect $M|\Omega\rangle$ to lie in another hilbert space. Ordinarily, on energy grounds, we are free to ignore the hilbert space built from $M|\Omega\rangle$ as irrelevant to low-energy physics. However, there are situations where we must include this hilbert space in the discussion of low-energy large-scale physics, namely, when the system is at a symmetry breaking transition. 
 
-A complete mathematical treatment of this problem would bring us to the discussion of superselection sectors. We'll evade this somewhat by specialising to (a) one spatial dimension; and (b) the case of systems invariant under local symmetry actions. Let's begin with a fairly general class of examples. Suppose $|\Omega_a\rangle$, $a>0$, is a sequence of states of a one-dimensional chain of qudits of dimension $d$. We further assume that this sequence of states admits a local action of a symmetry group $G$. What this means is that $G$ acts on $|\Omega_a\rangle$ via the representation
+A complete mathematical treatment of this problem would bring us to the discussion of superselection sectors. We'll evade this topic somewhat by specialising to (a) one spatial dimension; and (b) the case of systems invariant under local symmetry actions. Let's begin with a fairly general class of examples. Suppose $|\Omega_a\rangle$, $a>0$, is a sequence of states of a one-dimensional chain of qudits of dimension $d$. We further assume that this sequence of states admits a local action of a symmetry group $G$. What this means is that $G$ acts on $|\Omega_a\rangle$ via the representation
 \begin{equation}
 	\pi(g) \equiv \bigotimes_{j\in\mathbb{Z}} U_g,
 \end{equation}
@@ -1130,9 +1125,7 @@ with all other entries zero. Hence we identify
 \end{equation}
 as a vector of fluctuation fields and their conjugate momenta.
 
-We now turn to the dynamics of the quantum fluctuation fields. 
-
-To work out the generator of time evolution we need to understand how to express 
+We now turn to the dynamics of the quantum fluctuation fields. To work out the generator of time evolution we need to understand how to express 
 \begin{equation}
 	\frac{1}{a}[H_a, \widetilde{\varphi}_l^{(a)}(f)] 
 \end{equation}
