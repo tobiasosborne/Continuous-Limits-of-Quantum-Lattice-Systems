@@ -460,21 +460,30 @@ and
 		&= \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\,  \langle \widehat{c}^\dag(k)\widehat{c}(k)\rangle - \frac{1}{\sqrt2}\int_{-\frac12}^{\frac12} dk\, \langle \widehat{c}(k)\widehat{c}^\dag(k)\rangle = 0.
 	\end{split}
 \end{equation}
-The remaining expectation values follow a similar pattern; consider the classical two-point function
+The remaining expectation values follow a similar pattern. Firstly, the number operator for site $l$ is simply given by
+\begin{equation}
+	\begin{split}
+		\langle c_0^\dag c_0\rangle &= \int_{-\frac14}^{\frac14} dk\,  \langle \widehat{c}^\dag(k)\widehat{c}(k)\rangle = \frac12.
+	\end{split}
+\end{equation}
+
+ The classical two-point function may be found via a similar calculation: 
 \begin{equation}
 	\begin{split}
 		\langle c_0^\dag c_l\rangle &= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{-2\pi ilk'} \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle \\
 		&= \int_{-\frac12}^{\frac12} dk\, e^{-2\pi ilk} \langle \widehat{c}^\dag(k)\widehat{c}(k)\rangle \\
 		&= \int_{-\frac14}^{\frac14} dk\, e^{-2\pi ilk}\\ 
 		&= \frac{e^{-2\pi ilk}}{-2\pi i l}\bigg|_{k=-\frac14}^{k=\frac14} \\
-		&= -\frac{\cos(\frac{\pi }{2}l)}{\pi i l}§.
+		&= \frac{\sin(\frac{\pi }{2}l)}{\pi  l}.
 	\end{split}
 \end{equation}
-The correlation function will average to zero according to the standard continuum limit built around lattice momentum $k=0$. However, the quantum correlation function will be \emph{nontrivial} for a continuum limit built around lattice momenta $k=\frac14$. Thus the tight-binding model exposes a feature that we have hitherto neglected, namely, that we can build different \emph{inequivalent} continuum limits around \emph{different} lattice momenta. This becomes a necessity when the low-energy physics is determined by a minimum in the dispersion relation occurring at nonzero lattice momenta --- a generic situation for fermion models. What this means in the present context is as follows. Write
+
+
+The correlation function will average to zero according to the standard continuum limit built around lattice momentum $k=0$. However, the quantum correlation function will be \emph{nontrivial} for a continuum limit built around lattice momenta $k=\pm\frac14$. Thus the tight-binding model exposes a feature that we have hitherto neglected, namely, that we can build different \emph{inequivalent} continuum limits around \emph{different} lattice momenta. This becomes a necessity when the low-energy physics is determined by a minimum in the dispersion relation occurring at nonzero lattice momenta --- a generic situation for fermion models. What this means in the present context is as follows. Write
 \begin{equation}
 	\phi^{(a)}_k(f) \equiv a\sum_{j\in\mathbb{Z}} \sum_{\alpha=0}^{2^s-1} e^{2\pi i jk}[f]_\alpha(aj) \lambda_j^\alpha,
 \end{equation}
-where $k \in [-\frac12, \frac12)$. This is intended to be a classical observable based around lattice momentum $k$ and is engineered via the addition of the fourier-like phase factor. We also the introduce the quantum fluctuation operator around lattice momentum $k$:
+where $k \in [-\frac12, \frac12)$. This is intended to be a classical observable based around lattice momentum $k$, engineered via the addition of the fourier-like phase factor. We also the introduce the quantum fluctuation operator around lattice momentum $k$:
 \begin{equation}
 	\widetilde{\phi}^{(a)}_k(f) \equiv Z_f(a)\left( a\sum_{\alpha=0}^{d^2-1}\sum_{j\in \mathbb{Z}} e^{2\pi i jk}[f]_\alpha(aj) \lambda^\alpha_j - \langle\phi_k(f)\rangle\mathbb{I}\right).
 \end{equation}
@@ -495,21 +504,32 @@ The functions $f$ appearing in the field observables range, as before, over schw
 The fluctuation operators exhibit nontrivial correlations in the continuum limit:
 \begin{equation}
 	\begin{split}
-		\langle {\widetilde{\psi}^\dag}{}^{(a)}_{-\frac{1}{4}}(f)\widetilde{\psi}^{(a)}_{\frac{1}{4}}(g) \rangle &= a\sum_{j,j'}f(aj)g(aj')\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi i (jk-j'k')}e^{\frac{\pi}{2} i (j+j')} \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle \\
-		&= \frac{1}{a}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, \widehat{f}(\widetilde{k})\widehat{g}(\widetilde{k}') \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle + O(a),\\
-		&= \frac{1}{a}\int_{-\frac14}^{\frac14} dk\, \widehat{f}(\widetilde{k})\widehat{g}(\widetilde{k}) + O(a),
+		\langle {\widetilde{\psi}^\dag}{}^{(a)}_{k_0}(f)\widetilde{\psi}^{(a)}_{k_0'}(g) \rangle &= a\sum_{j,j'}f(aj)g(aj')\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi i (jk-j'k')}e^{2\pi i (-jk_0+j'k_0')} \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle \\
+		&= \frac{1}{a}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, \widehat{f}(\tfrac1a (k-k_0))\widehat{g}(\tfrac1a (k'-k_0')) \langle \widehat{c}^\dag(k)\widehat{c}(k')\rangle + O(a),\\
+		&= \frac{1}{a}\int_{-\frac14}^{\frac14} dk\, \widehat{f}(\tfrac1a (k-k_0))\widehat{g}(\tfrac1a (k_0'-k)) + O(a),
 	\end{split}
 \end{equation}
 where 
 \begin{equation}
 	\widehat{f}(k) \equiv \int_{-\infty}^\infty e^{2\pi i x k}f(x) \, dx
 \end{equation}
-and
-$\widetilde{k} \equiv \frac{1}{a}(k+\frac14)$. Thus the correlation function is determined by 
+Thus, in order that the correlation function is nontrivial, we require $k_0 = k_0'$ and we find
 \begin{equation}
-	\frac{1}{a}\int_{-\frac14}^\frac14 \, \widehat{f}(\widetilde{k})\widehat{g}(\widetilde{k})\, dk \rightarrow \int_0^{\infty} \widehat{f}(k)\widehat{g}(k) \, dk,
+	\frac{1}{a}\int_{-\frac14}^{\frac14} dk\, \widehat{f}(\tfrac1a (k-k_0))\widehat{g}(\tfrac1a (k_0'-k)) \rightarrow \int_\alpha^{\beta} \widehat{f}(k)\widehat{g}(-k) \, dk,
 \end{equation}
-where $\omega(k) = k+\frac14$, $\Lambda = 1/a$.
+where $\alpha = \frac1a(-\frac14-k_0)$ and $\beta = \frac1a(\frac14-k_0)$. The standard zero lattice momentum correlation functions, for $k_0 = 0$, are hence determined by
+\begin{equation}
+	\langle {\widehat{\psi}^\dag}{}^{(a)}(f)\widehat{\psi}^{(a)}(g) \rangle \rightarrow \int_{-\infty}^{\infty} \widehat{f}(k)\widehat{g}(-k) \, dk,
+\end{equation}
+Similarly, for $k_0 = \frac14$, we find 
+\begin{equation}
+	\langle {\widehat{\psi}^\dag}{}^{(a)}_{\frac14}(f)\widehat{\psi}^{(a)}_{\frac14}(g) \rangle \rightarrow \int_{-\infty}^{0} \widehat{f}(k)\widehat{g}(-k) \, dk,
+\end{equation}
+and for $k_0 = -\frac14$:
+\begin{equation}
+	\langle {\widehat{\psi}^\dag}{}^{(a)}_{-\frac14}(f)\widehat{\psi}^{(a)}_{-\frac14}(g) \rangle \rightarrow \int_{0}^{\infty} \widehat{f}(k)\widehat{g}(-k) \, dk.
+\end{equation}
+The zero-momentum limit turns out to be trivial when we consider the dynamics of a fluctuation centred around momentum zero as it rapidly averages to zero.
 
 
 
