@@ -568,7 +568,7 @@ Here we study the spacetime continuum limit for the tight-binding model. For the
 	H_a \equiv -\frac12 \sum_{j\in\mathbb{Z}} c_{j+1}^\dag c_j + \text{h.c.}
 \end{equation}
 
-We first look at the classical field operators 
+We first consider the standard continuous limit centred on lattice momenta $0$. Let's begin by looking at the classical field operators 
 \begin{equation}
 	\psi^{(a)}(f) \equiv a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty f(at, aj) e^{-itH_a}c_j e^{itH_a} \, dt.
 \end{equation}
@@ -584,6 +584,42 @@ where
 \begin{equation}
 	\widehat{f}(\omega,k) \equiv \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{2\pi i (\omega t + xk)}f(t,x)\, dtdx.
 \end{equation}
+
+Now because the smearing function $f$ is a Schwartz function we know that $\widehat{f}$ decays faster than any polynomial of its argument. A good example to keep in mind is the simple gaussian $f(t,x) \propto e^{-\frac12(t^2+x^2))}$, where we see that
+\begin{equation}
+		\lim_{a\rightarrow 0} \frac{1}{a}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)  = \lim_{a\rightarrow 0} \frac1a e^{-\frac{1}{2a^2}( \frac{\cos^2(2\pi k)}{4\pi^2} + k^2)} 
+			= 0.
+\end{equation}
+This holds in general: inside any expectation value we see that $\psi(f)$ is equivalent to multiplication by zero. 
+
+Physically this result is to be expected: a (classical) fluctuation with a lattice momenta $ka$ centred around $0$ will oscillate extremely rapidly on the timescale $t/a$ relevant for the continuous limit (it has energy $E(ka) \approx -1$). The physical interpretation of the spacetime limit is that a smearing function $f$ both represents the physical extent of a localised detector and its finite bandwidth: when a fluctuation oscillates too rapidly the detector sees only the averaged value (zero). 
+
+We now take a look at the quantum continuous limit:
+\begin{equation}
+	\widetilde{\psi}^{(a)}(f) \equiv \sqrt{a}\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty f(at, aj) e^{-itH_a}c_j e^{itH_a} \, dt.
+\end{equation}
+Consider the anticommutator
+\begin{equation}
+	\begin{split}
+		\{\widehat{\psi}^{(a)}(f), {{}\widehat{\psi}^{(a)}}^\dag(g)\} &= a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
+		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
+		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k}{a}\right) \, dk + O(a).
+	\end{split}
+\end{equation}
+(Here the $O(a)$ means that the correction is $O(a)$ when evaluated inside an expectation value.)
+
+
+An identical argument to the classical case shows us that
+\begin{equation}
+	\{\widehat{\psi}(f), \widehat{\psi}^\dag(g)\} = 0.
+\end{equation}
+That is, the field operators commute for all times, i.e., the continuous quantum limit is trivial. The physical basis for this is easy to justify: because we are looking at the large-scale low-energy dynamics of the tight-binding model any fluctuation centred on lattice momentum $0$ will oscillate extremely rapidly (any such fluctuation actually has a large energy) so that, as we zoom out, any degrees of freedom at two different instants of time will be completely uncorrelated in the limit.
+
+Of course this is just telling us that we are looking at fluctuations which are \emph{not} low energy. 
+
+To see quantum fluctuations we need to focus on low-energy fluctuations.
+
+
 
 \section{String operators}
 In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
