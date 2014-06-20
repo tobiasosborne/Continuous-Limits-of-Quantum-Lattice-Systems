@@ -611,14 +611,19 @@ Consider the anticommutator
 
 An identical argument to the classical case shows us that
 \begin{equation}
-	\{\widehat{\psi}(f), \widehat{\psi}^\dag(g)\} = 0.
+	\{\widehat{\psi}(f), \widehat{\psi}^\dag(g)\} = 0,
 \end{equation}
-That is, the field operators commute for all times, i.e., the continuous quantum limit is trivial. The physical basis for this is easy to justify: because we are looking at the large-scale low-energy dynamics of the tight-binding model any fluctuation centred on lattice momentum $0$ will oscillate extremely rapidly (any such fluctuation actually has a large energy) so that, as we zoom out, any degrees of freedom at two different instants of time will be completely uncorrelated in the limit.
+for all Schwartz functions $f$ and $g$ on spacetime. That is, the field operators commute for all times, i.e., the continuous quantum limit is trivial. The physical basis for this is easy to justify: because we are looking at the large-scale low-energy dynamics of the tight-binding model any fluctuation centred on lattice momentum $0$ will oscillate extremely rapidly (any such fluctuation actually has a large energy) so that, as we zoom out, any degrees of freedom at two different instants of time will be completely uncorrelated in the limit. 
 
-Of course this is just telling us that we are looking at fluctuations which are \emph{not} low energy. 
-
-To see quantum fluctuations we need to focus on low-energy fluctuations.
-
+Of course this is just telling us that we are looking at fluctuations which are \emph{not} low energy. To see quantum fluctuations we need to focus on low-energy fluctuations: these are precisely fluctuations with a lattice momentum close to $k=\pm \frac14$. Here the classical spacetime field operators are described by
+\begin{equation}
+	\psi^{(a)}_{\pm\frac{1}{4}}(f) \equiv a\sum_{j\in\mathbb{Z}}\int_{-\infty}^{\infty} e^{\pm\frac{\pi}{2} i j}f(at,aj) e^{-itH_a}c_j e^{itH_a} = \frac{1}{a}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \widehat{c}(k)\, dk + O(a),
+\end{equation}
+Now, as $a\rightarrow 0$, we can obtain nontrivial results:
+\begin{equation}
+	\frac{1}{a} \widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \approx \frac{1}{a} \widehat{f}\left(\frac{\mp k+\frac14}{a}, -\frac{k\mp \frac14}{a}\right).
+\end{equation}
+{\color{red} check this...}
 
 
 \section{String operators}
