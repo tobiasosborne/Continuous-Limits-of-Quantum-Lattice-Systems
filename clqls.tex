@@ -562,6 +562,26 @@ and for $k_0 = -\frac14$:
 \end{equation}
 The zero-momentum limit turns out to be trivial when we consider the dynamics of a fluctuation centred around momentum zero as it rapidly averages to zero.
 
+We also study the equal-time anti-commutator:
+\begin{equation}
+	\begin{split}
+		\{ {\widetilde{\psi}^\dag}{}^{(a)}_{k_0}(f),\widetilde{\psi}^{(a)}_{k_0'}(g) \} &= a\sum_{j,j'}f(aj)g(aj')\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi i (jk-j'k')}e^{2\pi i (-jk_0+j'k_0')} \{\widehat{c}^\dag(k),\widehat{c}(k')\} \\
+		&= \frac{1}{a}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, \widehat{f}(\tfrac1a (k-k_0))\widehat{g}(\tfrac1a (k'-k_0')) \delta(k-k') \mathbb{I} + O(a),\\
+		&= \frac{1}{a}\int_{-\frac12}^{\frac12} dk\, \widehat{f}(\tfrac1a (k-k_0))\widehat{g}(\tfrac1a (k_0'-k)) \mathbb{I} + O(a),
+	\end{split}
+\end{equation}
+which is nonzero only when $k_0=k_0'$; changing variables we find
+\begin{equation}
+	\{ {\widetilde{\psi}^\dag}{}^{(a)}_{k_0}(f),\widetilde{\psi}^{(a)}_{k_0}(g) \} 
+	= \int_{-(\frac12+k_0)/a}^{(\frac12-k_0)/a} dk\, \widehat{f}(k)\widehat{g}(-k) \mathbb{I} + O(a).
+\end{equation}
+For the $k_0 = 0,\frac14$, and $-\frac14$ limits we have 
+\begin{equation}
+	\{ {\widetilde{\psi}^\dag}{}^{(a)}_{k_0}(f),\widetilde{\psi}^{(a)}_{k_0}(g) \} 
+	= \int_{-\infty}^{\infty} dk\, \widehat{f}(k)\widehat{g}(-k) \mathbb{I} + O(a).
+\end{equation}
+
+
 \subsubsection{The spacetime continuum limit}
 Here we study the spacetime continuum limit for the tight-binding model. For the sequence of hamiltonians $H_a$ we simply take the tight-binding model itself:
 \begin{equation}
@@ -601,7 +621,7 @@ We now take a look at the quantum continuous limit:
 Consider the anticommutator
 \begin{equation}
 	\begin{split}
-		\{\widehat{\psi}^{(a)}(f), {{}\widehat{\psi}^{(a)}}^\dag(g)\} &= a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
+		\{\widetilde{\psi}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}}(g)\} &= a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
 		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
 		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k}{a}\right) \, dk + O(a).
 	\end{split}
@@ -624,6 +644,23 @@ Now, as $a\rightarrow 0$, we can obtain nontrivial results:
 	\frac{1}{a} \widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \approx \frac{1}{a} \widehat{f}\left(\frac{\mp k+\frac14}{a}, -\frac{k\mp \frac14}{a}\right).
 \end{equation}
 {\color{red} check this...}
+
+Let's now look at the continuous limit around lattice momentum $k_0=\pm14$:
+\begin{equation}
+	\begin{split}
+		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} &= a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty e^{2\pi i (-jk_0+j'k_0')}f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
+		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'-k_0'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
+		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k-k_0'}{a}\right) \, dk + O(a).
+	\end{split}
+\end{equation}
+We immediately deduce that $k_0 = k_0'$; now change variables to $l = (k-k_0)/a$:
+\begin{equation}
+	\begin{split}
+		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} 
+		&= \frac{1}{a}\int_{-\infty}^{\infty}\widehat{f}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \, dl + O(a).
+	\end{split}
+\end{equation}
+{\color{red} There seems to be an extra 1/a here...}
 
 
 \section{String operators}
