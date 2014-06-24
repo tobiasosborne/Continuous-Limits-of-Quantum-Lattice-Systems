@@ -294,7 +294,7 @@ where the sum is over all neighbouring spins. We allow the hamiltonian to possib
 
 We now show that such an identification leads to a definition of the dynamics for the continuum limit which obeys strict causality. This argument is essentially conditioned on the existence of a \emph{spacetime} quantum continuum limit. What this means is the following: first introduce the classical \emph{spacetime} discretised field operators via
 \begin{equation}
-	\phi^{(a)}(f) \equiv a^D\sum_{\alpha = 0}^{d^2-1}\sum_{j\in\mathbb{Z}^D} \int_{-\infty}^\infty f_\alpha(at, aj) e^{-itH_a}\lambda^\alpha_je^{itH_a} \, dt,
+	\phi^{(a)}(f) \equiv a^{D+1}\sum_{\alpha = 0}^{d^2-1}\sum_{j\in\mathbb{Z}^D} \int_{-\infty}^\infty f_\alpha(at, aj) e^{-itH_a}\lambda^\alpha_je^{itH_a} \, dt,
 \end{equation}
 where now $f$ is a rapidly decaying function on spacetime $\mathcal{M}_{D+1}\equiv\mathbb{R}\times \mathbb{R}^D$. We say that the sequence 
 $\{\rho_a\}_{a\in\mathbb{R}^+}$ admits a \emph{classical spacetime continuum limit} if 
@@ -305,7 +305,7 @@ for all rapidly decaying $f_l$ on $\mathcal{M}_{D+1}$.
 
 We define the spacetime quantum fluctuation operators via
 \begin{equation}
-	\widetilde{\phi}^{(a)}(f) \equiv Z_f(a)\left( \int_{-\infty}^\infty  a^D\sum_{\alpha = 0}^{d^2-1}\sum_{j\in \mathbb{Z}^D} f_\alpha(at, aj) e^{-itH_a}\lambda^\alpha_je^{itH_a} \,dt - \langle\phi(f)\rangle\mathbb{I}\right).
+	\widetilde{\phi}^{(a)}(f) \equiv Z_f(a)\left( \int_{-\infty}^\infty  a^{D+1}\sum_{\alpha = 0}^{d^2-1}\sum_{j\in \mathbb{Z}^D} f_\alpha(at, aj) e^{-itH_a}\lambda^\alpha_je^{itH_a} \,dt - \langle\phi(f)\rangle\mathbb{I}\right).
 \end{equation}
 Correspondingly, the \emph{quantum spacetime continuum limit} is defined by the expectation values of products of $\widetilde{\phi}^{(a)}(f)$ for $a\rightarrow 0$, as $f$ runs over all rapidly decaying functions on $\mathcal{M}_{D+1}$:
 \begin{equation}\label{eq:qsctslimit}
@@ -590,14 +590,14 @@ Here we study the spacetime continuum limit for the tight-binding model. For the
 
 We first consider the standard continuous limit centred on lattice momenta $0$. Let's begin by looking at the classical field operators 
 \begin{equation}
-	\psi^{(a)}(f) \equiv a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty f(at, aj) e^{-itH_a}c_j e^{itH_a} \, dt.
+	\psi^{(a)}(f) \equiv a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty f(at, aj) e^{-itH_a}c_j e^{itH_a} \, dt.
 \end{equation}
 This expression can simplified somewhat by moving to momentum space
 \begin{equation}
 	\begin{split}
-		\psi^{(a)}(f) &\equiv a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\frac12}^{\frac12} f(at, aj) e^{-2\pi i jk} e^{-itH_a}\widehat{c}(k) e^{itH_a} \, dkdt \\
-		&= a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\frac12}^{\frac12} f(at, aj) e^{-2\pi i jk} e^{-it \cos(2\pi k)} \widehat{c}(k)  \, dkdt \\
-		&= \frac{1}{a}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right) \widehat{c}(k)\, dk + O(a),
+		\psi^{(a)}(f) &\equiv a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\frac12}^{\frac12} f(at, aj) e^{-2\pi i jk} e^{-itH_a}\widehat{c}(k) e^{itH_a} \, dkdt \\
+		&= a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\frac12}^{\frac12} f(at, aj) e^{-2\pi i jk} e^{-it \cos(2\pi k)} \widehat{c}(k)  \, dkdt \\
+		&= a\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right) \widehat{c}(k)\, dk + O(a),
 	\end{split}
 \end{equation}
 where
@@ -605,9 +605,9 @@ where
 	\widehat{f}(\omega,k) \equiv \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{2\pi i (\omega t + xk)}f(t,x)\, dtdx.
 \end{equation}
 
-Now because the smearing function $f$ is a Schwartz function we know that $\widehat{f}$ decays faster than any polynomial of its argument. A good example to keep in mind is the simple gaussian $f(t,x) \propto e^{-\frac12(t^2+x^2))}$, where we see that
+Now because the smearing function $f$ is a Schwartz function we know that $\widehat{f}$ decays faster than any polynomial of its argument. A good example to keep in mind is the simple gaussian $f(t,x) \propto e^{-\frac12(t^2+x^2)}$, where we see that
 \begin{equation}
-		\lim_{a\rightarrow 0} \frac{1}{a}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)  = \lim_{a\rightarrow 0} \frac1a e^{-\frac{1}{2a^2}( \frac{\cos^2(2\pi k)}{4\pi^2} + k^2)} 
+		\lim_{a\rightarrow 0} a\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)  = \lim_{a\rightarrow 0} a e^{-\frac{1}{2a^2}( \frac{\cos^2(2\pi k)}{4\pi^2} + k^2)} 
 			= 0.
 \end{equation}
 This holds in general: inside any expectation value we see that $\psi(f)$ is equivalent to multiplication by zero. 
@@ -616,14 +616,14 @@ Physically this result is to be expected: a (classical) fluctuation with a latti
 
 We now take a look at the quantum continuous limit:
 \begin{equation}
-	\widetilde{\psi}^{(a)}(f) \equiv \sqrt{a}\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty f(at, aj) e^{-itH_a}c_j e^{itH_a} \, dt.
+	\widetilde{\psi}^{(a)}(f) \equiv a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty f(at, aj) e^{-itH_a}c_j e^{itH_a} \, dt.
 \end{equation}
 Consider the anticommutator
 \begin{equation}
 	\begin{split}
-		\{\widetilde{\psi}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}}(g)\} &= a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
-		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
-		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k}{a}\right) \, dk + O(a).
+		\{\widetilde{\psi}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}}(g)\} &= a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
+		&= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
+		&= \int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k}{a}\right) \, dk + O(a).
 	\end{split}
 \end{equation}
 (Here the $O(a)$ means that the correction is $O(a)$ when evaluated inside an expectation value.)
@@ -637,18 +637,18 @@ for all Schwartz functions $f$ and $g$ on spacetime. That is, the field operator
 
 Of course this is just telling us that we are looking at fluctuations which are \emph{not} low energy. To see quantum fluctuations we need to focus on low-energy fluctuations: these are precisely fluctuations with a lattice momentum close to $k=\pm \frac14$. Here the classical spacetime field operators are described by
 \begin{equation}
-	\psi^{(a)}_{\pm\frac{1}{4}}(f) \equiv a\sum_{j\in\mathbb{Z}}\int_{-\infty}^{\infty} e^{\pm\frac{\pi}{2} i j}f(at,aj) e^{-itH_a}c_j e^{itH_a} = \frac{1}{a}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \widehat{c}(k)\, dk + O(a),
+	\psi^{(a)}_{\pm\frac{1}{4}}(f) \equiv a^2\sum_{j\in\mathbb{Z}}\int_{-\infty}^{\infty} e^{\pm\frac{\pi}{2} i j}f(at,aj) e^{-itH_a}c_j e^{itH_a} = a\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \widehat{c}(k)\, dk + O(a),
 \end{equation}
 Now, as $a\rightarrow 0$, we can obtain nontrivial results:
 \begin{equation}
-	\frac{1}{a} \widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \approx \frac{1}{a} \widehat{f}\left(\frac{\mp k+\frac14}{a}, -\frac{k\mp \frac14}{a}\right).
+	a\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \approx a \widehat{f}\left(\frac{\mp k+\frac14}{a}, -\frac{k\mp \frac14}{a}\right).
 \end{equation}
 {\color{red} check this...}
 
-Let's now look at the continuous limit around lattice momentum $k_0=\pm14$:
+Let's now look at the continuous limit around lattice momentum $k_0=\pm1/4$:
 \begin{equation}
 	\begin{split}
-		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} &= a\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty e^{2\pi i (-jk_0+j'k_0')}f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
+		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} &= a^2\sum_{j,j'\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty e^{2\pi i (-jk_0+j'k_0')}f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
 		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'-k_0'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
 		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k-k_0'}{a}\right) \, dk + O(a).
 	\end{split}
@@ -657,7 +657,7 @@ We immediately deduce that $k_0 = k_0'$; now change variables to $l = (k-k_0)/a$
 \begin{equation}
 	\begin{split}
 		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} 
-		&= \frac{1}{a}\int_{-\infty}^{\infty}\widehat{f}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \, dl + O(a).
+		&= \frac1a\int_{-\infty}^{\infty}\widehat{f}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \, dl + O(a).
 	\end{split}
 \end{equation}
 {\color{red} There seems to be an extra 1/a here...}
