@@ -292,7 +292,7 @@ The natural setting here is then that of a quantum lattice system in $D$ dimensi
 \end{equation}
 where the sum is over all neighbouring spins. We allow the hamiltonian to possibly depend on the lattice spacing $a$, however, the norm $\|h_{j,k}(a)\|$ is required to be bounded by a constant for all sites $j$ and $k$ in the lattice. 
 
-We now show that such an identification leads to a definition of the dynamics for the continuum limit which obeys strict causality. This argument is essentially conditioned on the existence of a \emph{spacetime} quantum continuum limit. What this means is the following: first introduce the classical \emph{spacetime} discretised field operators via
+As we'll see later, such an identification leads to a definition of the dynamics for the continuum limit which obeys strict causality. This argument is essentially conditioned on the existence of a \emph{spacetime} quantum continuum limit which is defined in the following. First introduce the classical \emph{spacetime} discretised field operators via
 \begin{equation}
 	\phi^{(a)}(f) \equiv a^{D+1}\sum_{\alpha = 0}^{d^2-1}\sum_{j\in\mathbb{Z}^D} \int_{-\infty}^\infty f_\alpha(at, aj) e^{-itH_a}\lambda^\alpha_je^{itH_a} \, dt,
 \end{equation}
@@ -471,7 +471,7 @@ The ground state $|\Omega\rangle$ is then determined by the condition that
 	1, &\quad k \in (-\frac14, \frac14).
 \end{cases}
 \end{equation}
-This is a one-dimensional fermi sea. We take for our reference sequence of states $|\Omega_a\rangle$, $a\ge 0$, the constant ground state $|\Omega\rangle$ of the tight-binding model.
+This is a one-dimensional fermi sea. We take for our reference sequence of states $|\Omega_a\rangle$, $a\ge 0$, the constant ground state $|\Omega\rangle$ of the tight-binding model, i.e.\ $|\Omega_a\rangle \equiv |\Omega\rangle$.
 
 We first build the classical continuum limit: using the basis 
 \begin{equation}
@@ -514,7 +514,7 @@ The correlation function will average to zero according to the standard continuu
 \begin{equation}
 	\phi^{(a)}_k(f) \equiv a\sum_{j\in\mathbb{Z}} \sum_{\alpha=0}^{2^s-1} e^{2\pi i jk}[f]_\alpha(aj) \lambda_j^\alpha,
 \end{equation}
-where $k \in [-\frac12, \frac12)$. This is intended to be a classical observable based around lattice momentum $k$, engineered via the addition of the fourier-like phase factor. We also the introduce the quantum fluctuation operator around lattice momentum $k$:
+where $k \in [-\frac12, \frac12)$. This is intended to be a classical observable based around lattice momentum $k$, engineered via the addition of the fourier-like phase factor. We also introduce the quantum fluctuation operator around lattice momentum $k$:
 \begin{equation}
 	\widetilde{\phi}^{(a)}_k(f) \equiv Z_f(a)\left( a\sum_{\alpha=0}^{d^2-1}\sum_{j\in \mathbb{Z}} e^{2\pi i jk}[f]_\alpha(aj) \lambda^\alpha_j - \langle\phi_k(f)\rangle\mathbb{I}\right).
 \end{equation}
@@ -526,7 +526,7 @@ For the tight-binding model we now choose $k = \pm\frac14$ and build the classic
 \end{equation}
 The classical continuum limit of these fields is zero. However, their quantum correlation function will be nontrivial.
 
-To study the quantum fluctuations around the $k=\pm \frac14$ limits. To this end we study the fluctuation operators
+We study the quantum fluctuations around the $k=\pm \frac14$ limits, i.e., the edges of the fermi sea. To this end we study the fluctuation operators
 \begin{equation}
 	\widetilde{\psi}^{(a)}_{\pm\frac14}(f) \equiv \sqrt{a}\sum_{j\in \mathbb{Z}} e^{\pm\frac{\pi}{2} i j}f(aj) c_j, \quad \text{and} \quad {\widetilde{\psi}^\dag}{}^{(a)}_{\pm\frac{1}{4}}(f) \equiv \sqrt{a}\sum_{j\in\mathbb{Z}} e^{\mp \frac{\pi}{2} i j}f(aj) c_j^\dag.
 \end{equation}
@@ -542,15 +542,15 @@ The fluctuation operators exhibit nontrivial correlations in the continuum limit
 \end{equation}
 where 
 \begin{equation}
-	\widehat{f}(k) \equiv \int_{-\infty}^\infty e^{2\pi i x k}f(x) \, dx
+	\widehat{f}(k) \equiv \int_{-\infty}^\infty e^{2\pi i x k}f(x) \, dx.
 \end{equation}
-Thus, in order that the correlation function is nontrivial, we require $k_0 = k_0'$ and we find
+Thus, in order for the correlation function to be nontrivial, we require $k_0 = k_0'$ and we find
 \begin{equation}
 	\frac{1}{a}\int_{-\frac14}^{\frac14} dk\, \widehat{f}(\tfrac1a (k-k_0))\widehat{g}(\tfrac1a (k_0'-k)) \rightarrow \int_\alpha^{\beta} \widehat{f}(k)\widehat{g}(-k) \, dk,
 \end{equation}
 where $\alpha = \frac1a(-\frac14-k_0)$ and $\beta = \frac1a(\frac14-k_0)$. The standard zero lattice momentum correlation functions, for $k_0 = 0$, are hence determined by
 \begin{equation}
-	\langle {\widehat{\psi}^\dag}{}^{(a)}(f)\widehat{\psi}^{(a)}(g) \rangle \rightarrow \int_{-\infty}^{\infty} \widehat{f}(k)\widehat{g}(-k) \, dk,
+	\langle {\widehat{\psi}^\dag}{}^{(a)}(f)\widehat{\psi}^{(a)}(g) \rangle \rightarrow \int_{-\infty}^{\infty} \widehat{f}(k)\widehat{g}(-k) \, dk.
 \end{equation}
 Similarly, for $k_0 = \frac14$, we find 
 \begin{equation}
@@ -562,7 +562,7 @@ and for $k_0 = -\frac14$:
 \end{equation}
 The zero-momentum limit turns out to be trivial when we consider the dynamics of a fluctuation centred around momentum zero as it rapidly averages to zero.
 
-We also study the equal-time anti-commutator:
+We also study the equal-time anticommutator:
 \begin{equation}
 	\begin{split}
 		\{ {\widetilde{\psi}^\dag}{}^{(a)}_{k_0}(f),\widetilde{\psi}^{(a)}_{k_0'}(g) \} &= a\sum_{j,j'}f(aj)g(aj')\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12} dkdk'\, e^{2\pi i (jk-j'k')}e^{2\pi i (-jk_0+j'k_0')} \{\widehat{c}^\dag(k),\widehat{c}(k')\} \\
@@ -596,8 +596,8 @@ This expression can simplified somewhat by moving to momentum space
 \begin{equation}
 	\begin{split}
 		\psi^{(a)}(f) &\equiv a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\frac12}^{\frac12} f(at, aj) e^{-2\pi i jk} e^{-itH_a}\widehat{c}(k) e^{itH_a} \, dkdt \\
-		&= a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\frac12}^{\frac12} f(at, aj) e^{-2\pi i jk} e^{-it \cos(2\pi k)} \widehat{c}(k)  \, dkdt \\
-		&= a\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right) \widehat{c}(k)\, dk + O(a),
+		&= a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\frac12}^{\frac12} f(at, aj) e^{-2\pi i jk} e^{it \cos(2\pi k)} \widehat{c}(k)  \, dkdt \\
+		&= \int_{-\frac12}^{\frac12}\widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right) \widehat{c}(k)\, dk + O(a),
 	\end{split}
 \end{equation}
 where
@@ -607,7 +607,7 @@ where
 
 Now because the smearing function $f$ is a Schwartz function we know that $\widehat{f}$ decays faster than any polynomial of its argument. A good example to keep in mind is the simple gaussian $f(t,x) \propto e^{-\frac12(t^2+x^2)}$, where we see that
 \begin{equation}
-		\lim_{a\rightarrow 0} a\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)  = \lim_{a\rightarrow 0} a e^{-\frac{1}{2a^2}( \frac{\cos^2(2\pi k)}{4\pi^2} + k^2)} 
+		\lim_{a\rightarrow 0} \widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)  = \lim_{a\rightarrow 0} e^{-\frac{1}{2a^2}( \frac{\cos^2(2\pi k)}{4\pi^2} + k^2)} 
 			= 0.
 \end{equation}
 This holds in general: inside any expectation value we see that $\psi(f)$ is equivalent to multiplication by zero. 
@@ -622,8 +622,8 @@ Consider the anticommutator
 \begin{equation}
 	\begin{split}
 		\{\widetilde{\psi}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}}(g)\} &= a^2\sum_{j\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
-		&= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
-		&= \int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k}{a}\right) \, dk + O(a).
+		&= \int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(-\frac{\cos(2\pi k')}{2\pi a}, \frac{k'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
+		&= \int_{-\frac12}^{\frac12}\widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k}{a}\right)\widehat{g}\left(-\frac{\cos(2\pi k)}{2\pi a}, \frac{k}{a}\right) \, dk + O(a).
 	\end{split}
 \end{equation}
 (Here the $O(a)$ means that the correction is $O(a)$ when evaluated inside an expectation value.)
@@ -633,35 +633,37 @@ An identical argument to the classical case shows us that
 \begin{equation}
 	\{\widehat{\psi}(f), \widehat{\psi}^\dag(g)\} = 0,
 \end{equation}
-for all Schwartz functions $f$ and $g$ on spacetime. That is, the field operators commute for all times, i.e., the continuous quantum limit is trivial. The physical basis for this is easy to justify: because we are looking at the large-scale low-energy dynamics of the tight-binding model any fluctuation centred on lattice momentum $0$ will oscillate extremely rapidly (any such fluctuation actually has a large energy) so that, as we zoom out, any degrees of freedom at two different instants of time will be completely uncorrelated in the limit. 
+for all Schwartz functions $f$ and $g$ on spacetime. That is, the field operators anticommute for all times, i.e., the continuous quantum limit is trivial. The physical basis for this is easy to justify: because we are looking at the large-scale low-energy dynamics of the tight-binding model any fluctuation centred on lattice momentum $0$ will oscillate extremely rapidly (any such fluctuation actually has a large energy) so that, as we zoom out, any degrees of freedom at two different instants of time will be completely uncorrelated in the limit. 
 
 Of course this is just telling us that we are looking at fluctuations which are \emph{not} low energy. To see quantum fluctuations we need to focus on low-energy fluctuations: these are precisely fluctuations with a lattice momentum close to $k=\pm \frac14$. Here the classical spacetime field operators are described by
 \begin{equation}
-	\psi^{(a)}_{\pm\frac{1}{4}}(f) \equiv a^2\sum_{j\in\mathbb{Z}}\int_{-\infty}^{\infty} e^{\pm\frac{\pi}{2} i j}f(at,aj) e^{-itH_a}c_j e^{itH_a} = a\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \widehat{c}(k)\, dk + O(a),
+	\psi^{(a)}_{\pm\frac{1}{4}}(f) \equiv a^2\sum_{j\in\mathbb{Z}}\int_{-\infty}^{\infty} e^{\pm\frac{\pi}{2} i j}f(at,aj) e^{-itH_a}c_j e^{itH_a} \, dt = \int_{-\frac12}^{\frac12}\widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \widehat{c}(k)\, dk + O(a),
 \end{equation}
 Now, as $a\rightarrow 0$, we can obtain nontrivial results:
 \begin{equation}
-	a\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \approx a \widehat{f}\left(\frac{\mp k+\frac14}{a}, -\frac{k\mp \frac14}{a}\right).
+	\widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k\mp \frac14}{a}\right) \approx \widehat{f}\left(\frac{\mp k+\frac14}{a}, -\frac{k\mp \frac14}{a}\right).
 \end{equation}
-{\color{red} check this...}
 
 Let's now look at the continuous limit around lattice momentum $k_0=\pm1/4$:
 \begin{equation}
 	\begin{split}
-		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} &= a^2\sum_{j,j'\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty e^{2\pi i (-jk_0+j'k_0')}f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
-		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k')}{2\pi a}, \frac{k'-k_0'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
-		&= \frac{1}{a^2}\int_{-\frac12}^{\frac12}\widehat{f}\left(-\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(\frac{\cos(2\pi k)}{2\pi a}, \frac{k-k_0'}{a}\right) \, dk + O(a).
+		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} &= a^4Z^2(a)\sum_{j,j'\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty e^{2\pi i (-jk_0+j'k_0')}f(at, aj)g(at', aj') \{e^{-itH_a}c_j e^{itH_a},  e^{-it'H_a}c_{j'}^\dag e^{it'H_a}\} \, dt \\
+		&= a^2Z^2(a)\int_{-\frac12}^{\frac12}\int_{-\frac12}^{\frac12}\widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(-\frac{\cos(2\pi k')}{2\pi a}, \frac{k'-k_0'}{a}\right) \{\widehat{c}(k), \widehat{c}^\dag(k') \}\, dkdk' + O(a) \\
+		&= a^2 Z^2(a)\int_{-\frac12}^{\frac12}\widehat{f}\left(\frac{\cos(2\pi k)}{2\pi a}, -\frac{k-k_0}{a}\right)\widehat{g}\left(-\frac{\cos(2\pi k)}{2\pi a}, \frac{k-k_0'}{a}\right) \, dk + O(a).
 	\end{split}
 \end{equation}
 We immediately deduce that $k_0 = k_0'$; now change variables to $l = (k-k_0)/a$:
 \begin{equation}
 	\begin{split}
 		\{\widetilde{\psi}_{k_0}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{k_0}}(g)\} 
-		&= \frac1a\int_{-\infty}^{\infty}\widehat{f}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \, dl + O(a).
+		&= a Z^2(a)\int_{-\infty}^{\infty}\widehat{f}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \, dl + O(a).
 	\end{split}
 \end{equation}
-{\color{red} There seems to be an extra 1/a here...}
-
+To understand this expression suppose that, e.g., $f(t,x) = \frac{e^{-t^2-x^2}}{\pi}$. In this case we have that
+\begin{equation}
+	\widehat{f}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \underset{a\rightarrow 0}{\rightarrow} e^{-4l^2}.
+\end{equation}
+Thus we see we need to choose $Z(a) = \frac1{\sqrt{a}}$ to obtain nontrivial fluctuation dynamics.
 
 \section{String operators}
 In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
@@ -721,19 +723,19 @@ $d(A,B)$ is the number of edges in the shortest path through the lattice connect
 
 Consider 
 \begin{equation}
-	[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)] \equiv a^{2D} Z_f(a)Z_g(a) \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   f_\alpha(as, aj)g_\beta(at,ak) [e^{-isH_a}\lambda^\alpha_je^{isH_a}, e^{-itH_a}\lambda^\beta_ke^{itH_a} ] \,dsdt.
+	[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)] \equiv a^{2D+2} Z_f(a)Z_g(a) \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   f_\alpha(as, aj)g_\beta(at,ak) [e^{-isH_a}\lambda^\alpha_je^{isH_a}, e^{-itH_a}\lambda^\beta_ke^{itH_a} ] \,dsdt.
 \end{equation}
 We can bound this quantity according to
 \begin{equation}
 	\begin{split}
-	\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} &\le a^{2D} Z_f(a)Z_g(a) \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   |f_\alpha(as, aj)||g_\beta(at,ak)| \|[e^{-i(s-t)H_a}\lambda^\alpha_je^{i(s-t)H_a}, \lambda^\beta_k]\|_{\infty} \,dsdt \\
-	&\le C_0 a^{2D} Z_f(a)Z_g(a)  \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   |f_\alpha(as, aj)||g_\beta(at,ak)| e^{-{\tau} d(j,k) + \ell |s-t|}\,dsdt,
+	\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} &\le a^{2D+2} Z_f(a)Z_g(a) \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   |f_\alpha(as, aj)||g_\beta(at,ak)| \|[e^{-i(s-t)H_a}\lambda^\alpha_je^{i(s-t)H_a}, \lambda^\beta_k]\|_{\infty} \,dsdt \\
+	&\le C_0 a^{2D+2} Z_f(a)Z_g(a)  \sum_{\alpha,\beta=0}^{d^2-1}\sum_{j,k\in \mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   |f_\alpha(as, aj)||g_\beta(at,ak)| e^{-{\tau} d(j,k) + \ell |s-t|}\,dsdt,
 	\end{split}
 \end{equation}
 where we've absorbed the constant $\max_{\alpha}\|\lambda^\alpha\|_\infty$ into $C_0$.
 Changing variables we find
 \begin{equation}
-	\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} \le C_0 d^4a^{2D} Z_f(a)Z_g(a)  \sum_{x_j,y_k\in a\mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   f^\star(s', x_j)g^\star(t',y_k) e^{\frac{-{\tau} d(x_j,y_k) +\ell |s'-t'|}{a}}\,dsdt,
+	\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} \le C_0 d^4a^{2D} Z_f(a)Z_g(a)  \sum_{x_j,y_k\in a\mathbb{Z}^D}\int_{-\infty}^\infty\int_{-\infty}^\infty   f^\star(s', x_j)g^\star(t',y_k) e^{\frac{-{\tau} d(x_j,y_k) +\ell |s'-t'|}{a}}\,ds'dt',
 \end{equation}
 where
 \begin{equation}
@@ -767,6 +769,7 @@ From this we have that
 	\lim_{a\rightarrow 0}\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} &\le  d^4C_0 \|f\|_\infty \|g\|_\infty\lim_{a\rightarrow 0}\int_{\supp(f)}\int_{\supp(g)}   a^{-m} e^{\frac{-{\tau} d(x,y) +\ell |s-t|}{a}}\,dsdxdtdy = 0.
 	\end{split}
 \end{equation}
+where $m$ is determined by the smallest integer such that $Z_f(a)Z_g(a) \le a^{-m}$.
 Therefore we conclude that
 \begin{equation}
 	[\widehat{\phi}(f), \widehat{\phi}(g)]  = 0.
