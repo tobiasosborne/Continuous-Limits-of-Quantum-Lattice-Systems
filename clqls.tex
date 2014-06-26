@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{mathrsfs}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{color}
@@ -17,6 +18,8 @@
 \renewcommand{\d}{\ensuremath{d}}
 \newcommand{\vx}{\ensuremath{\vec{x}}}
 \newcommand{\vk}{\ensuremath{\vec{k}}}
+\DeclareMathOperator{\Schw}{\mathscr{S}(\mathbb{R}^{\mathit{d}})}
+\DeclareMathOperator{\Schwst}{\mathscr{S}(\mathbb{R}^{\mathit{d}+1})}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
@@ -945,7 +948,179 @@ and defining the quantum limit via the limit of their expectation values
 	\langle\Omega|\left(\prod_{l=1}^m D^{\mu_l}\widehat{\phi}(f_l)\right)|\Omega\rangle \equiv \lim_{a\rightarrow 0} \tr\left(\rho_a \prod_{l=1}^m\triangle^{\mu_l}\widetilde{\phi}^{(a)}(f_l)\right).
 \end{equation}
 
-Intuitively we should be able to connect field operators for general local operators $\mathcal{A}(\Lambda_n)$ with \emph{products} of derivatives of local field operators $\widehat{\phi}(x)$ built using only the single-site local operators. Unfortunately this doesn't work in a completely naive sense because products of field operators are no longer always operators (or distribution-valued operators) on a hilbert space. In order to make sense of a composite field operator expression like $(\widehat{\phi} D^\mu\widehat{\phi})(x)$ we'll need to investigate the singular short-distance properties of the $n$-point functions. This topic brings us to the operator product expansion.
+Intuitively we should be able to connect field operators for general local operators $\mathcal{A}(\Lambda_n)$ with \emph{products} of derivatives of local field operators $\widehat{\phi}(x)$ built using only the single-site local operators. Unfortunately this doesn't work in a completely naive sense because products of field operators are no longer always operators (or distribution-valued operators) on a hilbert space. In order to make sense of a composite field operator expression like $(\widehat{\phi} D^\mu\widehat{\phi})(x)$ we'll need to investigate the singular short-distance properties of the $n$-point functions. This topic will bring us to the operator product expansion.
+
+\section{Distributions}
+In this appendix we review the mathematical preliminaries required to discuss \emph{distributions} and \emph{Schwartz functions}. We follow Reed and Simon closely throughout this appendix \cite{reed:1978a}.
+
+Suppose $r \in \mathbb{N}$ and $x\in \mathbb{Z}^d$. Write $B_r(x)$ for the open ball
+\begin{equation}
+	B_r(x) = \{y\in \mathbb{Z}^d\,|\, |x-y| < r\}.
+\end{equation}
+Let $\lambda \in [0, \infty)$ and $U\subset \mathbb{R}^d$. Then write 
+\begin{equation}
+	\lambda U \equiv \{x\in \mathbb{R}^d\,|\, \lambda^{-1} x \in U\}
+\end{equation}
+for the \emph{scaling} of $U$ by $\lambda$.
+ 
+%\begin{defn}
+%Let $I\subset \mathbb{R}$ and $s\in[0,\infty)$. We write 
+%\begin{equation}
+%	[I]_s \equiv \{ x\in \mathbb{Z}\,|\, e^{-s}x \in I\},
+%\end{equation}
+%for the \emph{discretisation} (or \emph{quantisation}) of $U$ at \emph{scale} $s$. Note that $[I]_s= (e^s I) \cap \mathbb{Z}$.
+%\end{defn}
+
+Many of our results concern \emph{Schwartz space} $\Schw$, which is given by the function space of all rapidly decreasing functions on $\mathbb{R}^d$:
+\begin{equation}
+	\Schw \equiv \{ f\in C^{\infty}(\mathbb{R}^d)\, |\, \|f\|_{\alpha,\beta} < \infty, \forall \alpha, \beta \in \mathbb{N}_0^d\},
+\end{equation}
+where $\alpha$ and $\beta$ are multi-indices, $C^{\infty}(\mathbb{R}^d)$ is the set of smooth functions from $\mathbb{R}^d$ to $\mathbb{C}$, and
+\begin{equation}
+	\|f\|_{\alpha,\beta} = \sup_{x\in\mathbb{R}^d} |x^\alpha D^{\beta} f(x)|.
+\end{equation}
+When clear, we use the abbreviated notation $\mathscr{S}$ for $\Schw$. One can check that $\|\cdot\|_{\alpha,\beta}$ is a seminorm. It is convenient to introduce the directed family of seminorms 
+\begin{equation}
+	\|f\|_{k,m} = \sum_{|\alpha|\le k} \sum_{|\beta|\le m} \|f\|_{\alpha,\beta},
+\end{equation}
+for multi-indices $k$ and $m$.
+
+
+Convergence for a sequence $\{f_n\}$ in $\mathscr{S}$ is defined by the requirement that 
+\begin{equation}
+	\lim_{n\rightarrow 0} \|f_n - f\|_{k,m} = 0,
+\end{equation}
+for all multi-indices $k$ and $m$.
+
+\begin{definition}
+	The topological dual space of $\mathscr{S}$, denoted by $\mathscr{S}'$, is called the space of \emph{tempered distributions}. 
+A tempered distribution, $T$, is thus a linear functional on $\mathscr{S}$ with the property that if
+\begin{equation}
+	\lim_{n\rightarrow\infty} \|f_n - f\|_{k,m} = 0, \quad \text{for all multi-indices $k$ and $m$}
+\end{equation}
+then
+\begin{equation}
+	\lim_{n\rightarrow\infty}|T(f_n) - T(f)| = 0.
+\end{equation}
+\end{definition}
+
+\begin{remark}
+	An equivalent formulation of the previous definition is furnished by saying that a tempered distribution $T$ is continuous at $f$ if, for all $ \epsilon > 0$, there exist multi-indices $k$ and $m$ and a $\delta > 0$ such that 
+	\begin{equation}
+		\|g-f\|_{k,m} < \delta \quad \text{implies} \quad |T(g)-T(f)| < \epsilon.
+	\end{equation}
+	This criteria is equivalent to the existence of a seminorm $\|\cdot\|_{k,m}$ with 
+	\begin{equation}\label{eq:tdcty}
+		|T(f)| \le C\|f\|_{k,m}
+	\end{equation}
+	for all $f\in \mathscr{S}$.
+\end{remark}
+
+\begin{example}
+	An important class of linear functionals satisfying the criteria (\ref{eq:tdcty}) are given by
+	\begin{equation}
+		T(f) = \sum_{0 \le |\alpha| \le k} \int dx\, F_\alpha(x_1, \ldots, x_n) D^\alpha f(x_1, \ldots, x_n),
+	\end{equation}
+	where
+	\begin{equation}
+		|F_\alpha(x_1, \ldots, x_n)| \le C_\alpha (1+|x|^j),
+	\end{equation}
+	for some $C_\alpha$ and $j$ depending on $\alpha$.
+\end{example}
+
+In many of our applications we encounter the space
+\begin{equation}
+	M_D(\mathbb{C})\otimes \mathscr{S},
+\end{equation}
+which we can equivalently regard as 
+\begin{equation}
+	M_D(\mathscr{S}),
+\end{equation}
+i.e., as matrices with Schwartz-function valued entries, or as 
+\begin{equation}
+	\mathscr{S}(\mathbb{R}^{2D\times 2D}),
+\end{equation}
+i.e., as Schwartz functions on $M_D(\mathbb{C}) \cong \mathbb{R}^{2D\times 2D}$.
+
+For any Schwartz function $f\in \mathcal{S}(\mathbb{R}^d)$ we have (by definition) that
+\begin{equation}
+	\lim_{a\rightarrow 0} \triangle^{\alpha}[f](x) \rightarrow D^{\alpha} f(x)
+\end{equation}
+for all $x\in\mathbb{R}^d$ and all $\alpha\in\mathbb{N}_0^d$. Therefore we have the estimate
+\begin{equation}
+	\triangle^{\alpha}[f](x) = D^{\alpha} f(x) + O(a),
+\end{equation}
+coming from Taylor's theorem.
+
+The space $L^2(\mathbb{R}^d)$ is endowed with the usual inner product
+\begin{equation}
+	(f,g) \equiv \int dx \, \overline{f}(x) g(x).
+\end{equation}
+
+\subsubsection{The $N$-representation of $\mathscr{S}$ and $\mathscr{S}'$}
+We distinguish the two classes of norms, namely 
+\begin{equation}
+	\|f\|_{\alpha,\beta,\infty} \equiv \|x^\alpha D^\beta f\|_{\infty},
+\end{equation}
+which correspond to the previously defined norm $\|f\|_{\alpha,\beta}$, and 
+\begin{equation}
+	\|f\|_{\alpha,\beta,2} \equiv \|x^\alpha D^\beta f\|_{L^2(\mathbb{R}^n)}.
+\end{equation}
+These two classes turn out to define equivalent families of seminorms:
+\begin{lemma}
+	The families of seminorms $\{\|\cdot\|_{\alpha,\beta,\infty}\}$ and $\{\|\cdot\|_{\alpha,\beta,2}\}$ on $\mathscr{S}(\mathbb{R}^n)$ are equivalent.
+\end{lemma}
+\begin{proof}
+	Only the $n=1$ case is presented for simplicity. Noting that $(1+x^2)^{-1} \in L^2(\mathbb{R})$ we have that $\|f\|_2 \le \|(1+x^2)^{-1}\|_2\|(1+x^2)f\|_{\infty}$. Thus
+	\begin{equation}
+		\|f\|_{\alpha,\beta,2} \le C(\|f\|_{\alpha,\beta,\infty} + \|f\|_{\alpha+2,\beta,\infty}).
+	\end{equation}
+	In the other direction we have that $f(x) = \int_{-\infty}^x f'(x)\, dx$, so
+	\begin{equation}
+		\|f\|_\infty \le \|f'\|_1 \le \|(1+x^2)f'\|_2\|(1+x^2)^{-1}\|_2.
+	\end{equation}
+	Since $(x^\alpha D^\beta f)' = \alpha x^{\alpha-1} D^\beta f + x^{\alpha} D^{\beta+1} f$, we have that
+	\begin{equation}
+		\|f\|_{\alpha,\beta,\infty} \le C(\alpha \|f\|_{\alpha-1,\beta,2} + \|f\|_{\alpha,\beta+1,2} + \alpha \|f\|_{\alpha+1,\beta,2} + \|f\|_{\alpha+2,\beta+1,2}).
+	\end{equation}
+\end{proof}
+
+Now we exploit some special properties of Hermite functions. Consider the maps $a:\mathscr{S}(\mathbb{R})\rightarrow \mathscr{S}(\mathbb{R})$ and $a^\dag:\mathscr{S}(\mathbb{R})\rightarrow \mathscr{S}(\mathbb{R})$:
+\begin{equation}
+	a \equiv \frac{1}{\sqrt{2}}\left(x+ \frac{d}{dx}\right), \quad \text{and} \quad a^\dag \equiv \frac{1}{\sqrt{2}}\left(x- \frac{d}{dx}\right).
+\end{equation}
+Write $n = a^\dag a$ and define the seminorm $\|f\|_m \equiv \|(n+\mathbb{I})^m f\|_2$ on $\mathscr{S}(\mathbb{R})$.
+\begin{lemma}
+	The seminorms $\{\|\cdot\|_m\}$ are a directed family equivalent to the $\{\|\cdot\|_{\alpha,\beta,2}\}$ family on $\mathscr{S}(\mathbb{R})$.
+\end{lemma}
+\begin{proof}
+	The key to the proof is to exploit the inequality
+	\begin{equation}
+		\|a_1^{\#}a_2^{\#}\cdots a_m^{\#}f\|_2 \le \|(n+m)^{\frac{m}{2}}f\|_2,
+	\end{equation}
+	where $a^{\#}$ stands for either $a$ or $a^\dag$.
+\end{proof}
+
+Write $\phi_0$ for the function defined by $a\phi_0 = 0$ and $\|\phi_0\|_2 = 1$, i.e., 
+\begin{equation}
+	\phi_0(x) = \frac{1}{\pi^{\frac14}} e^{-\frac12 x^2},
+\end{equation} 
+and define
+\begin{equation}
+	\phi_n(x) = \frac{1}{\sqrt{n!}} (a^\dag)^n \phi_0(x) = \frac{(-1)^n}{\pi^{\frac14}\sqrt{2^n n!}} e^{\frac12 x^2}\frac{d^n}{dx^n}e^{-\frac12 x^2},
+\end{equation}
+for the \emph{Hermite functions}.
+\begin{lemma}
+	The set $\{\phi_n\}_{n=0}^{\infty}$ is an orthonormal basis for $L^2(\mathbb{R})$.
+\end{lemma}
+\begin{proof}
+	The first step is to note that 
+	\begin{equation}
+		e^{-\alpha^2+2\alpha x} = \frac{e^{\frac{1}{2}x^2}}{\sqrt{2^n n!}}\sum_{n=0}^{\infty} \phi_n(x)  \frac{\alpha^n}{n!},
+	\end{equation}
+	which can be proved by differentiating both sides $n$ times with respect to $x$.
+\end{proof}
+
 
 \section{The engineering dimension}
 Here we explain what is meant by the \emph{engineering dimension} or \emph{classical scaling dimension} of a field operator in the continuum limit. (As opposed to the \emph{quantum scaling dimension} which is introduced later in the discussion of tree tensor networks.) This number is defined by the total spatial dimension plus the number of derivatives, i.e., let $\mu$ be a multi index, then 
