@@ -951,25 +951,7 @@ and defining the quantum limit via the limit of their expectation values
 Intuitively we should be able to connect field operators for general local operators $\mathcal{A}(\Lambda_n)$ with \emph{products} of derivatives of local field operators $\widehat{\phi}(x)$ built using only the single-site local operators. Unfortunately this doesn't work in a completely naive sense because products of field operators are no longer always operators (or distribution-valued operators) on a hilbert space. In order to make sense of a composite field operator expression like $(\widehat{\phi} D^\mu\widehat{\phi})(x)$ we'll need to investigate the singular short-distance properties of the $n$-point functions. This topic will bring us to the operator product expansion.
 
 \section{Distributions}
-In this appendix we review the mathematical preliminaries required to discuss \emph{distributions} and \emph{Schwartz functions}. We follow Reed and Simon closely throughout this appendix \cite{reed:1978a}.
-
-Suppose $r \in \mathbb{N}$ and $x\in \mathbb{Z}^d$. Write $B_r(x)$ for the open ball
-\begin{equation}
-	B_r(x) = \{y\in \mathbb{Z}^d\,|\, |x-y| < r\}.
-\end{equation}
-Let $\lambda \in [0, \infty)$ and $U\subset \mathbb{R}^d$. Then write 
-\begin{equation}
-	\lambda U \equiv \{x\in \mathbb{R}^d\,|\, \lambda^{-1} x \in U\}
-\end{equation}
-for the \emph{scaling} of $U$ by $\lambda$.
- 
-%\begin{defn}
-%Let $I\subset \mathbb{R}$ and $s\in[0,\infty)$. We write 
-%\begin{equation}
-%	[I]_s \equiv \{ x\in \mathbb{Z}\,|\, e^{-s}x \in I\},
-%\end{equation}
-%for the \emph{discretisation} (or \emph{quantisation}) of $U$ at \emph{scale} $s$. Note that $[I]_s= (e^s I) \cap \mathbb{Z}$.
-%\end{defn}
+In this appendix we review the mathematical preliminaries required to discuss \emph{distributions} and \emph{Schwartz functions}. We follow Reed and Simon \cite{reed:1978a} closely throughout this appendix. We centre our discussion on vector-valued distributions. 
 
 Many of our results concern \emph{Schwartz space} $\Schw$, which is given by the function space of all rapidly decreasing functions on $\mathbb{R}^d$:
 \begin{equation}
@@ -979,16 +961,25 @@ where $\alpha$ and $\beta$ are multi-indices, $C^{\infty}(\mathbb{R}^d)$ is the 
 \begin{equation}
 	\|f\|_{\alpha,\beta} = \sup_{x\in\mathbb{R}^d} |x^\alpha D^{\beta} f(x)|.
 \end{equation}
-When clear, we use the abbreviated notation $\mathscr{S}$ for $\Schw$. One can check that $\|\cdot\|_{\alpha,\beta}$ is a seminorm. It is convenient to introduce the directed family of seminorms 
+ One can check that $\|\cdot\|_{\alpha,\beta}$ is a seminorm. It is convenient to introduce the directed family of seminorms 
 \begin{equation}
 	\|f\|_{k,m} = \sum_{|\alpha|\le k} \sum_{|\beta|\le m} \|f\|_{\alpha,\beta},
 \end{equation}
 for multi-indices $k$ and $m$.
 
+In discussing the continuum of a quantum lattice system we often encounter vector-valued functions $f:\mathbb{R}^d \rightarrow \mathbb{C}^k$, $k\in \mathbb{N}$. There is a natural way to extend the definition of Schwartz space to include such vector-valued functions (indeed, one can extend the definition to the case of functions taking their values in a locally convex space). Write $\|v\| = \left(\sum_{j=1}^k |v_j|^2\right)^{\frac12}$ for the standard norm on $\mathbb{C}^k$. Then the \emph{Schwartz space of vector-valued functions} on $\mathbb{R}^d$ is given by
+\begin{equation}
+	\mathscr{S}(\mathbb{R}^d,\mathbb{C}^k) \equiv \{f\in C^{\infty}(\mathbb{R}^d,\mathbb{C}^k) \, | \, \|f\|_{\alpha,\beta} < \infty, \forall \alpha, \beta \in \mathbb{N}_0^d\}, 
+\end{equation}
+where $\alpha$ and $\beta$ are multi-indices, $C^{\infty}(\mathbb{R}^d,\mathbb{C}^k)$ is the set of smooth functions from $\mathbb{R}^d$ to $\mathbb{C}^k$, and
+\begin{equation}
+	\|f\|_{\alpha,\beta} = \sup_{x\in\mathbb{R}^d} \|x^\alpha D^{\beta} f(x)\|.
+\end{equation}
+Henceforth, where there is no chance of confusion, we use the abbreviated notation $\mathscr{S}$ for $\Schw$ or $\mathscr{S}(\mathbb{R}^d,\mathbb{C}^k)$.
 
 Convergence for a sequence $\{f_n\}$ in $\mathscr{S}$ is defined by the requirement that 
 \begin{equation}
-	\lim_{n\rightarrow 0} \|f_n - f\|_{k,m} = 0,
+	\lim_{n\rightarrow \infty} \|f_n - f\|_{k,m} = 0,
 \end{equation}
 for all multi-indices $k$ and $m$.
 
@@ -1120,6 +1111,62 @@ for the \emph{Hermite functions}.
 	\end{equation}
 	which can be proved by differentiating both sides $n$ times with respect to $x$.
 \end{proof}
+
+\section{The Borchers-Uhlmann algebra}
+In this section we introduce the \emph{the Borchers-Uhlmann algebra}, which is the space from which the observables for a continuous quantum field are built. We need to extend and modify the standard definition somewhat in order to cover the more general continuum limits encountered here. In particular, the imposition of Lorentz invariance is not a requirement in many of our applications. 
+
+{\color{red} This appendix is a building site; the definitions are not in their final form at the current time.}
+
+\begin{definition}
+The \emph{Borchers-Uhlmann algebra} is the tensor algebra over the space of Schwartz functions:
+\begin{equation}
+	\mathcal{S} \equiv \bigoplus_{n=0}^{\infty} \mathcal{S}_n,
+\end{equation}
+with 
+\begin{equation}
+	\mathcal{S}_0 \equiv \mathbb{C}, \quad \mathcal{S}_n \equiv \bigotimes_{m=1}^n \mathscr{S}(\mathbb{R}^{d}).
+\end{equation}
+Elements of $\mathcal{S}$ are \emph{sequences}:
+\begin{equation}
+	f  = (f_0, f_1, \ldots, f_N, 0, \ldots), \quad f_n\in \mathcal{S}_n, \quad N<\infty,
+\end{equation}
+and the product is the tensor product
+\begin{equation}
+	(f\otimes g)(x_1, \ldots, x_n) \equiv \sum_{l = 0}^{n} f_l(x_1, \ldots, x_l)g_{n-l}(x_{l+1},\ldots, x_n).
+\end{equation}
+\end{definition}
+The involution is given by
+\begin{equation}
+	(f^*)_n(x_1, \ldots, x_n) = {f_n^\dag(x_1, \ldots, x_n)}.
+\end{equation}
+
+We isolate the maximal commutative $*$-subalgebra of $\mathcal{S}$ as follows.
+\begin{definition}
+Let $\mathcal{I}_{\text{cl}}$ be the two-sided ideal generated by
+\begin{equation}
+	f\otimes g - g\otimes f
+\end{equation}
+for all $f, g\in \mathcal{S}$. We call $\mathcal{I}_{\text{cl}}$ the \emph{classical limit ideal}. We define $\mathcal{I}_{C}$, the \emph{locality ideal}, to be the two-sided ideal generated by 
+\begin{equation}
+	f\otimes g - g\otimes f
+\end{equation}
+for all $f, g\in \mathcal{S}$ with $\supp(f)\cap \supp(g) = \emptyset$.
+\end{definition}
+
+\begin{remark}
+Because $\mathcal{I}_C \subset \mathcal{I}_{\text{cl}}$ we have the following inclusion of $*$-algebras
+\begin{equation}
+	\mathcal{S}/\mathcal{I}_{\text{cl}} \subset \mathcal{S}/\mathcal{I}_C.
+\end{equation}
+\end{remark}
+
+The $*$-algebra $\mathcal{O} = \mathcal{S}/\mathcal{I}_{\text{cl}}$ is commutative. We will obtain a representation of $\mathcal{O}$ via unbounded operators on a hilbert space via the classical continuum limit construction.
+
+The $*$-algebra $\mathcal{S}$ may be topologised as follows. Write $P_n$ for the projection of $\mathcal{S}$ onto the $n$th component $\mathcal{S}_n$. Let $\|f_n\|_{k,m}^{(n)}$ denote the standard seminorm on $f_n\in\mathcal{S}_n$ for $k, m \in \mathbb{Z}^+$. Let $\{k_n\}_{n\in\mathbb{Z}^+}$, $\{m_n\}_{n\in\mathbb{Z}^+}$, and $\{\epsilon_n\}_{n\in\mathbb{Z}^+}$ be three sequences of numbers such that $k_n\ge k_{n-1}$, $m_n\ge m_{n-1}$, and $0<\epsilon_n \le \epsilon_{n-1}$, with $k_n \rightarrow \infty$, $m_n\rightarrow \infty$, and $\epsilon_n \rightarrow 0$. Define
+\begin{equation}
+	\|f\|^\star_{\{k\},\{m\},\{\epsilon\}} \equiv \sup_{n\ge 0} \epsilon_n^{-1}\|f_n\|_{k_n,m_n}^{(n)}.
+\end{equation}
+This non-denumerable set of seminorms defines a vector-space topology. {\color{red} check!}
 
 
 \section{The engineering dimension}
