@@ -772,7 +772,7 @@ From this we have that
 	\lim_{a\rightarrow 0}\|[\widetilde{\phi}^{(a)}(f), \widetilde{\phi}^{(a)}(g)]\|_{\infty} &\le  d^4C_0 \|f\|_\infty \|g\|_\infty\lim_{a\rightarrow 0}\int_{\supp(f)}\int_{\supp(g)}   a^{-m} e^{\frac{-{\tau} d(x,y) +\ell |s-t|}{a}}\,dsdxdtdy = 0.
 	\end{split}
 \end{equation}
-where $m$ is determined by the smallest integer such that $Z_f(a)Z_g(a) \le a^{-m}$.
+where $m$ is determined by the largest integer such that $Z_f(a)Z_g(a) \le a^{-m}$.
 Therefore we conclude that
 \begin{equation}
 	[\widehat{\phi}(f), \widehat{\phi}(g)]  = 0.
@@ -985,9 +985,9 @@ for all multi-indices $k$ and $m$.
 
 \begin{definition}
 	The topological dual space of $\mathscr{S}$, denoted by $\mathscr{S}'$, is called the space of \emph{tempered distributions}. 
-A tempered distribution, $T$, is thus a linear functional on $\mathscr{S}$ with the property that if
+A tempered distribution $T$ is thus a linear functional on $\mathscr{S}$ with the property that if
 \begin{equation}
-	\lim_{n\rightarrow\infty} \|f_n - f\|_{k,m} = 0, \quad \text{for all multi-indices $k$ and $m$}
+	\lim_{n\rightarrow\infty} \|f_n - f\|_{k,m} = 0, \quad \text{for all multi-indices $k$ and $m$,}
 \end{equation}
 then
 \begin{equation}
@@ -1019,47 +1019,23 @@ then
 	for some $C_\alpha$ and $j$ depending on $\alpha$.
 \end{example}
 
-In many of our applications we encounter the space
-\begin{equation}
-	M_D(\mathbb{C})\otimes \mathscr{S},
-\end{equation}
-which we can equivalently regard as 
-\begin{equation}
-	M_D(\mathscr{S}),
-\end{equation}
-i.e., as matrices with Schwartz-function valued entries, or as 
-\begin{equation}
-	\mathscr{S}(\mathbb{R}^{2D\times 2D}),
-\end{equation}
-i.e., as Schwartz functions on $M_D(\mathbb{C}) \cong \mathbb{R}^{2D\times 2D}$.
-
-For any Schwartz function $f\in \mathcal{S}(\mathbb{R}^d)$ we have (by definition) that
-\begin{equation}
-	\lim_{a\rightarrow 0} \triangle^{\alpha}[f](x) \rightarrow D^{\alpha} f(x)
-\end{equation}
-for all $x\in\mathbb{R}^d$ and all $\alpha\in\mathbb{N}_0^d$. Therefore we have the estimate
-\begin{equation}
-	\triangle^{\alpha}[f](x) = D^{\alpha} f(x) + O(a),
-\end{equation}
-coming from Taylor's theorem.
-
-The space $L^2(\mathbb{R}^d)$ is endowed with the usual inner product
-\begin{equation}
-	(f,g) \equiv \int dx \, \overline{f}(x) g(x).
-\end{equation}
-
 \subsubsection{The $N$-representation of $\mathscr{S}$ and $\mathscr{S}'$}
 We distinguish the two classes of norms, namely 
 \begin{equation}
-	\|f\|_{\alpha,\beta,\infty} \equiv \|x^\alpha D^\beta f\|_{\infty},
+	\|f\|_{\alpha,\beta,\infty} \equiv \|x^\alpha D^\beta f\|_{\infty} \equiv \sup_{x\in\mathbb{R}^d} \|x^\alpha D^{\beta} f(x)\|,
 \end{equation}
 which correspond to the previously defined norm $\|f\|_{\alpha,\beta}$, and 
 \begin{equation}
-	\|f\|_{\alpha,\beta,2} \equiv \|x^\alpha D^\beta f\|_{L^2(\mathbb{R}^n)}.
+	\|f\|_{\alpha,\beta,2} \equiv \|x^\alpha D^\beta f\|_{L^2(\mathbb{R}^n)} \equiv  \left(x^\alpha D^{\beta} f^\dag, x^\alpha D^{\beta} f \right)^{\frac12},
 \end{equation}
-These two classes turn out to define equivalent families of seminorms:
+where for any two $f,g \in L^2(\mathbb{R}^n, \mathbb{C}^k)$ we define
+\begin{equation}
+	(f,g) \equiv \int f^\dag(x) g(x) \, dx.
+\end{equation}
+
+These two classes turn out to define equivalent families of seminorms: {\color{red} (the extension of the following results to the vector-valued case is not yet complete)}
 \begin{lemma}
-	The families of seminorms $\{\|\cdot\|_{\alpha,\beta,\infty}\}$ and $\{\|\cdot\|_{\alpha,\beta,2}\}$ on $\mathscr{S}(\mathbb{R}^n)$ are equivalent.
+	The families of seminorms $\{\|\cdot\|_{\alpha,\beta,\infty}\}$ and $\{\|\cdot\|_{\alpha,\beta,2}\}$ on $\mathscr{S}$ are equivalent.
 \end{lemma}
 \begin{proof}
 	Only the $n=1$ case is presented for simplicity. Noting that $(1+x^2)^{-1} \in L^2(\mathbb{R})$ we have that $\|f\|_2 \le \|(1+x^2)^{-1}\|_2\|(1+x^2)f\|_{\infty}$. Thus
