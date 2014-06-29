@@ -664,9 +664,20 @@ We immediately deduce that $k_0 = k_0'$; now change variables to $l = (k-k_0)/a$
 \end{equation}
 To understand this expression suppose that, e.g., $f(t,x) = \frac{e^{-t^2-x^2}}{\pi}$. In this case we have that
 \begin{equation}
-	\widehat{f}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \underset{a\rightarrow 0}{\rightarrow} e^{-4l^2}.
+	\widehat{f}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \underset{a\rightarrow 0}{\rightarrow} e^{-4l^2} + 
 \end{equation}
-Thus we see we need to choose $Z(a) = \frac1{\sqrt{a}}$ to obtain nontrivial fluctuation dynamics.
+For general $f$ and $g$ and $k_0 = \pm \frac14$ we have, via 
+\begin{equation}
+	\frac{\cos(2\pi (al + k_0))}{2\pi a} \underset{a\rightarrow 0}{\rightarrow} = \frac{\cos(2\pi k_0)}{2\pi a} -l \sin(2\pi k_0) + O(a)
+\end{equation}
+that
+\begin{equation}
+	\widehat{f}\left(\frac{\cos(2\pi (al + k_0))}{2\pi a}, -l\right)\widehat{g}\left(-\frac{\cos(2\pi (al + k_0))}{2\pi a}, l\right) \underset{a\rightarrow 0}{\rightarrow} \widehat{f}\left(\mp l, -l\right)\widehat{g}\left(\pm l, l\right). 
+\end{equation}
+Thus we see we need to choose $Z(a) = \frac1{\sqrt{a}}$ to obtain nontrivial fluctuation dynamics; we find
+\begin{equation}
+	\{\widetilde{\psi}_{\pm \frac14}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{\pm \frac14}}(g)\} \underset{a\rightarrow 0}{\rightarrow} \int_{-\infty}^{\infty} \widehat{f}\left(\mp l, -l\right)\widehat{g}\left(\pm l, l\right) \,dl.
+\end{equation}
 
 \section{String operators}
 In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
