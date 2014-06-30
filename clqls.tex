@@ -679,6 +679,15 @@ Thus we see we need to choose $Z(a) = \frac1{\sqrt{a}}$ to obtain nontrivial flu
 	\{\widetilde{\psi}_{\pm \frac14}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{\pm \frac14}}(g)\} \underset{a\rightarrow 0}{\rightarrow} \int_{-\infty}^{\infty} \widehat{f}\left(\mp l, -l\right)\widehat{g}\left(\pm l, l\right) \,dl.
 \end{equation}
 
+We now see that this result directly leads to a lightcone for the propagation of information. Suppose that $f$ and $g$ are causally disconnected, i.e., the support of $f$ is outside the lightcone $\bigcup_{(x',t')\in\supp(g)} \{ (t,x) \,|\, (t-t')^2-(x-x')^2 \ge 0\}$. We claim that, in this case, $\{\widetilde{\psi}_{\pm \frac14}^{(a)}(f), {\widetilde{\psi}^{\dag (a)}_{\pm \frac14}}(g)\} = 0$. Unwinding the fourier transforms we first note that
+\begin{equation}
+	\begin{split}
+		\{\widehat{\psi}_{\pm \frac14}(f), {\widehat{\psi}^{\dag}_{\pm \frac14}}(g)\} &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty} \delta(\mp  t \pm  u -  z +  w) f(t,z)g(w,u) \,dtdudz dw \\
+		&= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}  f(t,z)g(z\pm t \mp u,u) \, dtdudz.
+	\end{split}
+\end{equation}
+
+
 \section{String operators}
 In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
 
