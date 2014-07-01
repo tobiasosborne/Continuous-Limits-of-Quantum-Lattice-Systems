@@ -518,7 +518,7 @@ The correlation function will average to zero according to the standard continuu
 	\phi^{(a)}_k(f) \equiv a\sum_{j\in\mathbb{Z}} \sum_{\alpha=0}^{2^s-1} e^{2\pi i jk}[f]_\alpha(aj) \lambda_j^\alpha,
 \end{equation}
 where $k \in [-\frac12, \frac12)$. This is intended to be a classical observable based around lattice momentum $k$, engineered via the addition of the fourier-like phase factor. We also introduce the quantum fluctuation operator around lattice momentum $k$:
-\begin{equation}
+\begin{equation}\label{eq:qcts_mtmk}
 	\widetilde{\phi}^{(a)}_k(f) \equiv Z_f(a)\left( a\sum_{\alpha=0}^{d^2-1}\sum_{j\in \mathbb{Z}} e^{2\pi i jk}[f]_\alpha(aj) \lambda^\alpha_j - \langle\phi_k(f)\rangle\mathbb{I}\right).
 \end{equation}
 The functions $f$ appearing in the field observables range, as before, over schwartz functions.
@@ -687,6 +687,18 @@ We now see that this result directly leads to a lightcone for the propagation of
 	\end{split}
 \end{equation}
 
+\subsubsection{Reconstruction of the hamiltonian}
+The hilbert space for the quantum continuous limit of a lattice system can be thought of as a gigantic tensor product over the continuous limit found at each lattice momenta $k$ (more on this later):
+\begin{equation}
+	\widehat{\mathcal{H}}_{\text{cts}} \text{``$=$''} \bigotimes_k \widehat{\mathcal{H}}_k,
+\end{equation}
+where $\widehat{\mathcal{H}}_k$ is the hilbert space of quantum fluctuations with lattice momentum $k$ found from taking the limit of the operators (\ref{eq:qcts_mtmk}). We have already seen that the continuous limit centred on a lattice momentum $k\not= \pm \frac14$ collapses to a trivial commutative system, so that the poorly defined infinite tensor product above simplifies tremendously. All of this can be made rigourous, and we initiate this task in the appendix on distributions. For now we content ourselves with a heuristic discussion, with the promise of a more quantitative treatment in a future project.
+
+Given that we now have a hilbert space of fluctuations we focus on the subsystem describing the low-energy fluctuations given by
+\begin{equation}
+	\widehat{\mathcal{H}}_{k=\frac14} \otimes \widehat{\mathcal{H}}_{k=-\frac14}.
+\end{equation}
+Given such a hilbert space of fluctuations we now implement a version of the \emph{Wightman reconstruction procedure} to obtain a representation for the hamiltonian describing the low-energy large-scale dynamics of the tight-binding model. 
 
 \section{String operators}
 In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
