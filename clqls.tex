@@ -694,11 +694,28 @@ The hilbert space for the quantum continuous limit of a lattice system can be th
 \end{equation}
 where $\widehat{\mathcal{H}}_k$ is the hilbert space of quantum fluctuations with lattice momentum $k$ found from taking the limit of the operators (\ref{eq:qcts_mtmk}). We have already seen that the continuous limit centred on a lattice momentum $k\not= \pm \frac14$ collapses to a trivial commutative system, so that the poorly defined infinite tensor product above simplifies tremendously. All of this can be made rigourous, and we initiate this task in the appendix on distributions. For now we content ourselves with a heuristic discussion, with the promise of a more quantitative treatment in a future project.
 
-Given that we now have a hilbert space of fluctuations we focus on the subsystem describing the low-energy fluctuations given by
+Given that we now have a hilbert space of fluctuations we focus on the subsystems describing the low-energy fluctuations given by
 \begin{equation}
 	\widehat{\mathcal{H}}_{k=\frac14} \otimes \widehat{\mathcal{H}}_{k=-\frac14}.
 \end{equation}
-Given such a hilbert space of fluctuations we now implement a version of the \emph{Wightman reconstruction procedure} to obtain a representation for the hamiltonian describing the low-energy large-scale dynamics of the tight-binding model. 
+We henceforth call the fluctuation operators centred on momentum $k=\frac14$ \emph{right movers} and the fluctuation operators centred on momentum $k=-\frac14$ \emph{left movers} and denote them by
+\begin{equation}
+	\widehat{\psi}_{k=\frac14}(f) \equiv \widehat{\psi}_{\sigma = 1}(f), \quad \text{and} \quad \widehat{\psi}_{k=\frac14}(f) \equiv \widehat{\psi}_{\sigma = -1}(f),
+\end{equation}
+which we then collect into a two-component field operator: 
+\begin{equation}
+	\widehat{\psi}(f) \equiv \begin{pmatrix}
+		\widehat{\psi}_{\sigma = 1}(f_1) \\
+		\widehat{\psi}_{\sigma = -1}(f_{-1})
+	\end{pmatrix}.
+\end{equation}
+
+Given such a hilbert space of fluctuations we now implement a version of the \emph{Wightman reconstruction procedure} to obtain a representation for the hamiltonian (actually, the unitary translation operator) describing the low-energy large-scale dynamics of the tight-binding model. The idea behind this approach is as follows: recall that our hilbert space of fluctuations is spanned by vectors of the form
+\begin{equation}
+	|f_1, f_2, \ldots, f_m\rangle \equiv \widehat{\psi}^\dag(f_1)\widehat{\psi}^\dag(f_2)\cdots \widehat{\psi}^\dag(f_m)|\Omega\rangle.
+\end{equation}
+The way we obtain the hamiltonian (and momentum) operator is to deduce a representation of a unitary operation $U(x_0,t_0)$ implementing the transformation $\widehat{\psi}(f(x,t)) \mapsto \widehat{\psi}(f(x-x_0,t-t_0))$. Differentiating this unitary with respect to $x_0$ and $t_0$ then furnishes a representation of the momentum and hamiltonian operators, respectively.
+
 
 \section{String operators}
 In this appendix we discuss how to generalise and apply the continuous limit construction to find the continuous limit of stringlike operators occurring in the discussion of symmetry breaking transitions. 
