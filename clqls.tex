@@ -710,11 +710,24 @@ which we then collect into a two-component field operator:
 	\end{pmatrix}.
 \end{equation}
 
-Given such a hilbert space of fluctuations we now implement a version of the \emph{Wightman reconstruction procedure} to obtain a representation for the hamiltonian (actually, the unitary translation operator) describing the low-energy large-scale dynamics of the tight-binding model. The idea behind this approach is as follows: recall that our hilbert space of fluctuations is spanned by vectors of the form
+Given such a hilbert space of fluctuations we now implement a version of the \emph{Wightman reconstruction procedure} to obtain a representation for the hamiltonian (actually, the unitary translation operator) describing the low-energy large-scale dynamics of the tight-binding model. Our discussion will be necessarily heuristic as we haven't yet introduced the mathematical formalism to make it rigourous (we do this in a later appendix). 
+
+The idea behind our approach is as follows. Recall that our hilbert space of fluctuations is spanned by vectors of the form
 \begin{equation}
 	|f_1, f_2, \ldots, f_m\rangle \equiv \widehat{\psi}^\dag(f_1)\widehat{\psi}^\dag(f_2)\cdots \widehat{\psi}^\dag(f_m)|\Omega\rangle.
 \end{equation}
-The way we obtain the hamiltonian (and momentum) operator is to deduce a representation of a unitary operation $U(x_0,t_0)$ implementing the transformation $\widehat{\psi}(f(x,t)) \mapsto \widehat{\psi}(f(x-x_0,t-t_0))$. Differentiating this unitary with respect to $x_0$ and $t_0$ then furnishes a representation of the momentum and hamiltonian operators, respectively.
+The way we obtain the hamiltonian (and momentum) operator is to deduce a representation of a unitary operation $U(x_0,t_0)$ implementing the transformation $\widehat{\psi}(f(x,t)) \mapsto \widehat{\psi}(f(x-x_0,t-t_0))$. Differentiating this unitary with respect to $x_0$ and $t_0$ then furnishes a representation of the momentum and hamiltonian operators, respectively. The main problem is then to show that the translation operation $(x,t)\mapsto (x+x_0, t+t_0)$ is: (a) well defined; (b) linear; and (c) unitary on the hilbert space of fluctuations.
+
+To understand whether the translation operation is well defined we first define it for all vectors in $\widehat{\mathcal{H}}$ by extending the map 
+\begin{equation}
+	\mathcal{T}(|f_1, f_2, \ldots, f_m\rangle) \equiv |f_1', f_2', \ldots, f_m'\rangle,
+\end{equation}
+where
+\begin{equation}
+	f_j'(x,t) \equiv f(x-x_0,t-t_0), \quad j = 1, 2, \ldots, m,
+\end{equation}
+by linearity. This definition makes it clear that, in the very least, $\mathcal{T}$ is a \emph{relation} on $\widehat{\mathcal{H}}\times \widehat{\mathcal{H}}$. We also see that $\widehat{\mathcal{H}}$ is the domain of $\mathcal{T}$. Thus we are left with the task of showing that if $(|\phi\rangle, |\psi\rangle)$ and $(|\phi\rangle, |\psi'\rangle)$ are elements of the relation defined by $\mathcal{T}$ then $|\psi\rangle = |\psi'\rangle$.
+
 
 
 \section{String operators}
