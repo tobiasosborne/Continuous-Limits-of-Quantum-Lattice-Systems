@@ -726,7 +726,22 @@ where
 \begin{equation}
 	f_j'(x,t) \equiv f(x-x_0,t-t_0), \quad j = 1, 2, \ldots, m,
 \end{equation}
-by linearity. This definition makes it clear that, in the very least, $\mathcal{T}$ is a \emph{relation} on $\widehat{\mathcal{H}}\times \widehat{\mathcal{H}}$. We also see that $\widehat{\mathcal{H}}$ is the domain of $\mathcal{T}$. Thus we are left with the task of showing that if $(|\phi\rangle, |\psi\rangle)$ and $(|\phi\rangle, |\psi'\rangle)$ are elements of the relation defined by $\mathcal{T}$ then $|\psi\rangle = |\psi'\rangle$.
+by linearity. This definition makes it clear that, in the very least, $\mathcal{T}$ is a \emph{relation} on $\widehat{\mathcal{H}}\times \widehat{\mathcal{H}}$, i.e., $\mathcal{T}\subseteq \widehat{\mathcal{H}}\times \widehat{\mathcal{H}}$ We also see that $\widehat{\mathcal{H}}$ is the domain of $\mathcal{T}$. Thus we are left with the task of showing that if $(|\phi\rangle, |\psi\rangle)$ and $(|\phi\rangle, |\psi'\rangle)$ are elements of the relation defined by $\mathcal{T}$ then $|\psi\rangle = |\psi'\rangle$. The only difficulty arises when $|\phi\rangle$ admits two different representations as linear combinations of the generating vectors $|f_1, f_2, \ldots, f_m\rangle$. Suppose that
+\begin{equation}
+	|\phi\rangle = \sum_{j} c_{j} |f_1^{(j)}, f_2^{(j)}, \ldots, f_{m_j}^{(j)}\rangle
+\end{equation}
+and
+\begin{equation}
+	|\phi\rangle = \sum_{j} d_{j} |g_1^{(j)}, g_2^{(j)}, \ldots, g_{m_j}^{(j)}\rangle
+\end{equation}
+are two different representations of $|\phi\rangle$ as a linear combination of the generating vectors. Our claim is then that 
+\begin{equation}
+	\sum_{j} c_{j} \mathcal{T}(|f_1^{(j)}, f_2^{(j)}, \ldots, f_{m_j}^{(j)}\rangle) = \sum_{j} d_{j} \mathcal{T}(|g_1^{(j)}, g_2^{(j)}, \ldots, g_{m_j}^{(j)}\rangle).
+\end{equation}
+Two argue this we first suppose the sum is finite and induct on the maximum number $\max_{j} m_j$ of functions appearing inside the ket. We then exploit the multilinearity of the ket, i.e.,
+\begin{equation}
+	|f_1, \ldots, f_k + g_k, \ldots f_m\rangle = |f_1, \ldots, f_k, \ldots f_m\rangle + |f_1, \ldots, g_k, \ldots f_m\rangle
+\end{equation}
 
 
 
