@@ -738,11 +738,25 @@ are two different representations of $|\phi\rangle$ as a linear combination of t
 \begin{equation}
 	\sum_{j} c_{j} \mathcal{T}(|f_1^{(j)}, f_2^{(j)}, \ldots, f_{m_j}^{(j)}\rangle) = \sum_{j} d_{j} \mathcal{T}(|g_1^{(j)}, g_2^{(j)}, \ldots, g_{m_j}^{(j)}\rangle).
 \end{equation}
-Two argue this we first suppose the sum is finite and induct on the maximum number $\max_{j} m_j$ of functions appearing inside the ket. We then exploit the multilinearity of the ket, i.e.,
+To argue this we first suppose the sum is finite and induct on the maximum number $\max_{j} m_j$ of functions appearing inside the ket. We look at the base case: exploit the multilinearity of the ket, i.e.,
 \begin{equation}
-	|f_1, \ldots, f_k + g_k, \ldots f_m\rangle = |f_1, \ldots, f_k, \ldots f_m\rangle + |f_1, \ldots, g_k, \ldots f_m\rangle
+	|f_1, \ldots, f_k + g_k, \ldots f_m\rangle = |f_1, \ldots, f_k, \ldots f_m\rangle + |f_1, \ldots, g_k, \ldots f_m\rangle,
 \end{equation}
+which directly follows from the definition of the quantum continuous limit. Consider $\mathcal{T}$ separately applied to both sides:
+\begin{equation}
+	\mathcal{T}(|f_1, \ldots, f_k + g_k, \ldots f_m\rangle) = |f_1', \ldots, f_k' + g_k', \ldots f_m'\rangle
+\end{equation}
+and
+\begin{equation} 
+	\mathcal{T}(|f_1, \ldots, f_k, \ldots f_m\rangle) + \mathcal{T}(|f_1, \ldots, g_k, \ldots f_m\rangle) = |f_1', \ldots, f_k', \ldots f_m'\rangle + |f_1', \ldots, g_k', \ldots f_m'\rangle.
+\end{equation}
+Exploiting the multilinearity of the ket with respect to its argument we see that both representations of the image are identical. This argument is easily extended, via completion, to the general case. So at least we know that $\mathcal{T}$ is a linear map. 
 
+The only remaining issue now is to argue that $\mathcal{T}$ is \emph{unitary}. That is, applying $\mathcal{T}$ does not destroy (or create) probability. To this end we study the behaviour of the inner product 
+\begin{equation}
+	\langle f_1, \ldots, f_k, \ldots f_m|g_1, \ldots, g_k, \ldots g_m\rangle
+\end{equation}
+under application of $\mathcal{T}$.
 
 
 \section{String operators}
