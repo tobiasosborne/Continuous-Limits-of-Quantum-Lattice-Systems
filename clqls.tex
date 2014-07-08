@@ -756,7 +756,11 @@ The only remaining issue now is to argue that $\mathcal{T}$ is \emph{unitary}. T
 \begin{equation}
 	\langle f_1, \ldots, f_k, \ldots f_m|g_1, \ldots, g_k, \ldots g_m\rangle
 \end{equation}
-under application of $\mathcal{T}$.
+under application of $\mathcal{T}$. We start with the one-particle sector:
+\begin{equation}
+	\langle f|g\rangle \equiv  \lim_{a\rightarrow 0} a^3 \sum_{j,j'\in\mathbb{Z}} \int_{-\infty}^\infty \int_{-\infty}^\infty e^{2\pi i (-jk_0+j'k_0')}f(at, aj)g(at', aj') \langle \Omega|c_j e^{i(t-t')H_a}c_{j'}^\dag e^{-i(t-t')}|\Omega\rangle \, dt.
+\end{equation}
+It is immediately clear that this expression only depends on the \emph{difference} $t-t'$, so that a translation in time leads to no change in the inner product. Similarly, translation invariance of the ground state $|\Omega\rangle$ immediately leads to the same conclusion for spatial translations. The general case follows from similar manipulations. Thus we deduce the action of $\mathcal{T}$ is unitary on the space of fluctuations.
 
 
 \section{String operators}
