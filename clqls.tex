@@ -978,6 +978,24 @@ To derive the bulk fields and the canonically conjugate pairs of field operators
 
 Because the operators in $\mathcal{A}(\Lambda_n)$ naturally live in $\mathcal{A}(\Lambda_{n+1})$ the fluctuation fields identified with respect to $\mathcal{A}(\Lambda_n)$ can always be realised as linear combinations of the fluctuation fields with respect to $\mathcal{A}(\Lambda_{n+1})$. One might imagine that it is possible to extend the list of field operators in a way that naturally respects the canonical commutation relations, however, this is not the case because the isotropic subspace of bulk fields for the case $\mathcal{A}(\Lambda_n)$ may fail to be embedded in a natural way into the bulk fields for $\mathcal{A}(\Lambda_{n+1})$. That is, some bulk fluctuation fields may become linear combinations of the canonical quantum fluctuation fields when the space of local operators is enlarged. The total list of field operators, including the bulk fields, are filtered in a straightforward way. 
 
+\subsection{An alternative construction for general local field operators via blocking}
+
+Here we explore an alternative way to build general local field operators based on \emph{blocking}. The idea is very simple: instead of considering translates of local operators in $\mathcal{A}(\Lambda_n)$ we first block our lattice into blocks $B_n(j)$ of side $n$ with basepoint $j\in n\mathbb{Z}^D$, i.e.\
+\begin{equation}
+	B_n(j) \equiv j+ \{0,1,\ldots, n-1\}^{\times D}. 
+\end{equation} 
+We then form the following classical field operators
+\begin{equation}
+	\phi^{(a)}_n(f) = (na)^D \sum_{j\in n\mathbb{Z}^D} \sum_\alpha [f]_\alpha (aj) \lambda_j^\alpha 
+\end{equation}
+and $\lambda_j^\alpha$ is a basis for $\mathcal{A}(B_n(j))$. The fluctuation fields are now given by
+\begin{equation}
+	\widetilde{\phi}^{(a)}_n(f) = Z_f(a)\left((na)^D \sum_{j\in n\mathbb{Z}^D} \sum_\alpha [f]_\alpha (aj) \lambda_j^\alpha - \langle \phi_n(f)\rangle \mathbb{I}\right).
+\end{equation}
+This construction simply reduces to the original continuum limit procedure instead applied to lattice supersites given by blocks of lattice points of side $n$. In this case the symplectic matrix $\Omega$ determining the canonical fields is directly determined by the reduced density operator of the block.
+
+A crucial question is now whether the construction presented here is equivalent to the general field operator construction of the previous section. It turns out that this is not always the case and we now spell out the conditions according to which the two constructions are equivalent. 
+
 \subsection{Derivatives} 
 Here we discuss how to realise \emph{derivatives} of field operators using the continuum limit construction. First some notation.
 A $D$-dimensional multi-index is a $D$-tuple $\alpha = (\alpha_1, \alpha_2, \ldots, \alpha_D) \in \mathbb{N}_0^D$ of non-negative integers (i.e., $\mathbb{N}_0 \equiv \mathbb{N}\cup \{0\}$).
