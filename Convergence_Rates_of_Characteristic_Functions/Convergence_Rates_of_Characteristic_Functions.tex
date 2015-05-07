@@ -1,0 +1,224 @@
+\documentclass[aps,10pt,epsfig,graphics,mathbbm]{article}
+
+\usepackage{amsmath,amsfonts,amssymb,graphics,graphicx,epsfig,color,times,bbm}
+\usepackage[sort&compress]{natbib}
+\usepackage[usenames,dvipsnames]{xcolor} 
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+						linkcolor=MidnightBlue,        % color of internal links (change box color with linkbordercolor)
+						citecolor=MidnightBlue,        % color of links to bibliography
+						filecolor=magenta,      			 % color of file links
+						urlcolor=MidnightBlue          % color of external links}
+}
+
+
+\bibliographystyle{apsrev}
+
+
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\mi}{\mathrm{i}}
+\newcommand{\md}{\mathrm{d}}
+
+
+\newcommand{\T}{\mathbbm{T}}
+\newcommand{\cc}{\mathbbm{C}}
+\newcommand{\zz}{\mathbbm{Z}}
+\newcommand{\nn}{\mathbbm{N}}
+\newcommand{\rr}{\mathbbm{R}}
+\newcommand{\id}{\mathbbm{1}}
+\renewcommand{\vec}[1]{\text{\boldmath$#1$}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{property}{Property}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem{assumption}{Assumption}
+
+\setlength{\textwidth}{1.4\textwidth}
+\setlength{\textheight}{1.25\textheight}
+\setlength{\oddsidemargin}{-0.15\oddsidemargin}
+%\setlength{\evensidemargin}{-0.3\evensidemargin}
+\setlength{\topmargin}{-0.2cm}
+\addtolength{\headsep}{-2\headsep}
+\bibliographystyle{abbrv}
+
+\newcommand{\proof}{{\em Proof. }}
+\newcommand{\qed}{\hfill$\square$\par\vskip24pt}
+
+%\bibliographystyle{unsrt}
+\begin{document}
+
+
+
+\title{\Large\bf Convergence Rates of Characteristic Functions}
+
+\author{{\large
+M. Cramer}\\ \small Institut f\"ur Theoretische Physik, Albert-Einstein
+Allee 11, Universit\"at Ulm, Germany}
+\date{}
+\maketitle
+
+\vspace*{-.6cm}
+
+
+\maketitle
+\begin{abstract}
+This is a small note on the rate of convergence in the quantum central limit theorem. So far it only contains the $0$-local and product state case, so in a sense the ``classical'' case.
+The more general, ``truly quantum'' case, will be added later. 
+\end{abstract}
+
+\section{Setting}
+
+We let $\mathcal{X}$ a collection of lattices sites equipped with a distance $d:\mathcal{X}\times\mathcal{X}\rightarrow \nn$ and consider observables of the form 
+\begin{equation}
+\hat{X}=\sum_{i\in\mathcal{X}}\hat{X}_i
+\end{equation}
+with $\hat{X}_i$ hermitian and $R$-local, i.e., it acts only on sites $\{j\in\mathcal{X}\,|\,d(i,j)\le R\}$. For a given state $\hat{\varrho}$ we write $\langle\cdot\rangle=\text{tr}[\hat{\varrho}\;\cdot\,]$ and
+\begin{equation}
+\begin{split}
+\mu=\langle\hat{X}\rangle,\;\;\;\sigma=\langle (\hat{X}-\mu)^2\rangle.
+\end{split}
+\end{equation}
+We will be concerned with the characteristic function $\phi:\rr\rightarrow\cc$,
+\begin{equation}
+\phi(t)=\langle\me^{\mi t\hat{X}}\rangle,
+\end{equation}
+and its distance to the corresponding Gaussian characteristic function,
+\begin{equation}
+\Delta(t)=|\phi(t)-\me^{\mi \mu t-\sigma^2t^2/2}|.
+\end{equation}
+We will write $|\mathcal{X}|=N$.
+
+\section{Product States and 0-local Observables}
+For $0$-local observables and product states we have the following.
+\begin{theorem} \label{0-local} Let $R=0$ and $\hat{\varrho}=\otimes_{i\in\mathcal{X}}\hat{\varrho}_i$. If
+\begin{equation}
+\label{t_condition}
+|t|\sum_{i\in\mathcal{X}}\langle(\hat{X}_i-\langle\hat{X}_i\rangle)^2\rangle^{1/2}\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}
+\le \frac{3}{5}\sigma^3
+\end{equation}
+then
+\begin{equation}
+\label{the_bound}
+\Delta(t/\sigma)\le   \frac{5}{12}\me^{-t^2/4}|t|^3\frac{\sum_{i\in\mathcal{X}}\langle(\hat{X}_i-\langle\hat{X}_i\rangle)^2\rangle^{1/2}\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}}{\sigma^3}.
+\end{equation}
+\end{theorem}
+{\it Remark 1:} Eq.~\eqref{the_bound} implies
+\begin{equation}
+\Delta(t/\sigma)\le   \frac{5}{12}\me^{-t^2/4}|t|^3\frac{\sqrt{\sum_{i\in\mathcal{X}}\langle (\hat{X}_i-\mu_i)^4\rangle}}{\sigma^2}.
+\end{equation}
+{\it Remark 2:} If $\langle(\hat{X}_i-\langle\hat{X}_i\rangle)^2\rangle=s^2$ and $\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}=\beta$, one recovers the familiar i.i.d. case,
+\begin{equation}
+\Delta(t/\sigma)\le   \frac{5\beta}{12 s^2}\me^{-t^2/4}|t|^3\frac{1}{\sqrt{N}}\;\;\;\text{if}\;\;\;|t|\le \frac{3s^2}{5\beta}N^{1/2}.
+\end{equation}
+{\it Remark 3:} If the $\hat{X}_i$ are bounded, $\|\hat{X}_i\|\le x$ then
+\begin{equation}
+\Delta(t/\sigma)\le \frac{5}{12}\me^{-t^2/4}|t|^3\left(\frac{x^2N}{\sigma^2}\right)^{3/2}\frac{1}{\sqrt{N}}  \;\;\;\text{if}\;\;\;|t|
+\le \frac{3}{5}\left(\frac{\sigma^2}{x^2N}\right)^{3/2}\sqrt{N}.
+\end{equation}
+
+\noindent
+The proof of Theorem~\ref{0-local} is completely analogous to the classical case, see, e.g., pretty much any book on probability theory. We give it for completeness.
+
+\proof
+For $i\in\mathcal{X}$ denote
+\begin{equation}
+\mu_i=\langle\hat{X}_i\rangle,\;\;\;
+\sigma_i^2=\langle(\hat{X}_i-\mu_i)^2\rangle.
+\end{equation}
+As $\hat{\varrho}$ is a product state, we have 
+\begin{equation}
+\sigma^2=\langle (\hat{X}-\mu)^2\rangle=\sum_{i,j\in\mathcal{X}}\langle(\hat{X}_i-\mu_i)(\hat{X}_j-\mu_j)\rangle
+=\sum_{i\in\mathcal{X}}\sigma_i^2
+\end{equation}
+and
+\begin{equation}
+\Delta(t)=\me^{-\sigma^2t^2/2}\Bigl|\me^{\sigma^2t^2/2}\prod_{i\in\mathcal{X}}\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle-1\Bigr|.
+\end{equation}
+Now,
+\begin{equation}
+\begin{split}
+\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle-1&= -\int_0^t\md x\,\int_0^x\md y\,\bigl\langle(\hat{X}_i-\mu_i)\me^{\mi t(\hat{X}_i-\mu_i)}(\hat{X}_i-\mu_i)\bigr\rangle.
+\end{split}
+\end{equation}
+By the Cauchy--Schwarz inequality
+\begin{equation}
+\label{CS}
+|\langle\hat{A}\hat{B}\rangle|^2=|\text{tr}[\hat{B}\sqrt{\hat{\varrho}}\sqrt{\hat{\varrho}}\hat{A}]|^2\le\text{tr}[\hat{B}\hat{\varrho}\hat{B}^\dagger]\text{tr}[\hat{A}^\dagger\hat{\varrho}\hat{A}]=\langle\hat{A}\hat{A}^\dagger\rangle\langle\hat{B}^\dagger\hat{B}\rangle
+\end{equation}
+we have
+\begin{equation}
+\label{second_moment_bound}
+\begin{split}
+|\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle-1|&\le \sigma_i^2t^2/2\le 1/2,
+\end{split}
+\end{equation}
+where the second inequality is implied by Eq.~\eqref{t_condition}.\footnote{$\sigma_i|t|> 1$ implies the absurdity 
+$\frac{3}{5}\sum_{i\in\mathcal{X}}\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}\ge\frac{3}{5}\sigma^2>\sum_{i\in\mathcal{X}}\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}$.} Hence we may use the principle branch of the logarithm to write
+\begin{equation}
+\begin{split}
+\Delta(t)&=\me^{-\sigma^2t^2/2}\Bigl|\me^{\sigma^2t^2/2}\me^{\sum_{i\in\mathcal{X}}\log\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle}-1\Bigr|\\
+&=\me^{-\sigma^2t^2/2}\Bigl|\exp\Bigl(\sum_{i\in\mathcal{X}}\bigl[\sigma_i^2 t^2/2+\log\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle\bigr]\Bigr)-1\Bigr|\\
+&\le \me^{F(t)-\sigma^2t^2/2}F(t), 
+\end{split}
+\end{equation}
+where $F(t)=\sum_iF_i(t)$ with
+\begin{equation}
+\begin{split}
+F_i(t)&=\Bigl|\frac{\sigma_i^2t^2}{2}+\log\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle\Bigr|\\
+&\le \Bigl|\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle-1+\frac{\sigma_i^2t^2}{2}\Bigr|+\Bigl|\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle-1-\log\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle\Bigr|\\
+&=:G_i(t)+H_i(t),
+\end{split}
+\end{equation}
+where we inserted a zero and used the triangle inequality. 
+For the first term we have
+\begin{equation}
+\begin{split}
+G_i(t)&=\Bigl|\int_0^t\md x\int_0^x\md y\int_0^y\md z\;\langle  (\hat{X}_i-\mu_i)^2\me^{\mi x(\hat{X}_i-\mu_i)}(\hat{X}_i-\mu_i)\rangle\Bigr|
+\end{split}
+\end{equation}
+such that by Eq.~\eqref{CS}
+\begin{equation}
+\begin{split}
+G_i(t)&\le \int_0^t\md x\int_0^x\md y\int_0^y\md z\;\sqrt{\langle (\hat{X}_i-\mu_i)^4\rangle\langle(\hat{X}_i-\mu_i)^2 \rangle}\\
+&=\sigma_i\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}|t|^3/6.
+\end{split}
+\end{equation}
+For the second term we use the  Mercator series and Eq.~\eqref{second_moment_bound}  to find
+\begin{equation}
+\begin{split}
+H_i(t)
+&\le \sum_{n=2}^\infty\frac{1}{n}\bigl|\langle\me^{\mi t(\hat{X}_i-\mu_i)}\rangle-1\bigr|^n
+\le \sum_{n=2}^\infty\frac{1}{n}\left(\frac{\sigma_i^2t^2}{2}\right)^n\\
+&= \frac{\sigma_i^4t^4}{4}\sum_{n=0}^\infty\frac{1}{n+2}\left(\frac{\sigma_i^2t^2}{2}\right)^n\\
+&\le \frac{\sigma_i^4t^4}{4}\sum_{n=0}^\infty\frac{1}{n+2}2^{-n}\\
+&\le \frac{\sigma_i^4t^4}{4}.
+\end{split}
+\end{equation}
+Hence,
+\begin{equation}
+\label{third_line}
+\begin{split}
+F(t)&\le \frac{|t|^3}{6}\sum_{i\in\mathcal{X}}\sigma_i\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}+\frac{t^4}{4}\sum_{i\in\mathcal{X}}\sigma_i^4\\
+&\le \frac{|t|^3}{6}\sum_{i\in\mathcal{X}}\sigma_i\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}+\frac{t^4}{4}\sum_{i\in\mathcal{X}}\sigma_i^2\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}\\
+&\le \frac{5}{12}|t|^3\sum_{i\in\mathcal{X}}\sigma_i\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}\\
+&\le \sigma^2\frac{t^2}{4},
+\end{split}
+\end{equation}
+where we used $\sigma_i^2\le \langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}$ (which follows from Eq.~\eqref{CS}) to obtain the second line, Eq.~\eqref{second_moment_bound} to obtain the third line, and Eq.~\eqref{t_condition} to obtain the last line. Thus
+\begin{equation}
+\begin{split}
+\Delta(t)&\le \me^{-\sigma^2t^2/4}F(t)\le  \frac{5}{12}\me^{-\sigma^2t^2/4}|t|^3\sum_{i\in\mathcal{X}}\sigma_i\langle (\hat{X}_i-\mu_i)^4\rangle^{1/2}
+\end{split}
+\end{equation}
+and Eq.~\eqref{the_bound} follows by using the bound in the third line of Eq.~\eqref{third_line}.\qed 
+
+
+ 
+
+
+\end{document}
