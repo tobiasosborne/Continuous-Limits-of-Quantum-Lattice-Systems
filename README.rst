@@ -1,6 +1,11 @@
 Continuous limits of quantum lattice systems
 ============================================
 
+Update
+------
+
+This project will be concluded in the coming days and submitted to the arXiv (with intended deadline 18.01.2019). If you wish to be included in this project please contact me directly as soon as possible.
+
 Introduction
 ------------
 
