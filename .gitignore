@@ -99,4 +99,5 @@ sympy-plots-for-*.tex/
 *.xdy
 
 # some temporary files
-clqs.pdf
+clqls.pdf
+clqls.tex
